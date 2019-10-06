@@ -1,0 +1,110 @@
+.body-title{
+    margin-bottom: 20px;
+}
+.show-body{
+    width: 100%;
+    /*background-color: #f0f0f0;*/
+    background-color: #f7f7f7;
+    min-height: 600px;
+}
+/*.show-header,*/
+.show-body-card{
+    width: 300px;
+    margin: 20px auto;
+    height: 230px;
+    /*padding: 10px;*/
+    background-color: white;
+    border-radius: 10px;
+    transition: box-shadow 0.5s;
+    -webkit-transition: box-shadow 0.5s;
+}
+.show-body-card:hover{
+    box-shadow: grey 0 0 20px 1px;
+}
+.show-body-card-header{
+    /*float: left;*/
+    width: 100%;
+    /*margin: 2px;*/
+    height: 60px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #1398d6;
+}
+.show-body-card-body{
+    color: gray;
+    font-size: 0.9em;
+    margin-left: 2em;
+    margin-right: 2px;
+    height: calc(100% - 60px - 40px);
+    width: auto;
+    line-height: 1.7em;
+    /*font-weight: bold;*/
+}
+.show-body-card-footer{
+    /*width: 228px;*/
+    /*float: right;*/
+    height: 40px;
+    line-height: 40px;
+    background-color: #eaeaea;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.inventory-name{
+    /*color: var(--header-bkcolor);*/
+    color: white;
+    font-size: 1.3em;
+    height: 1.3em;
+    font-weight: lighter;
+    padding-left: 16px;
+    padding-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.inventory-id{
+    color: white;
+    font-size: 0.9em;
+    padding-left: 16px;
+    padding-top: 5px;
+}
+.show-body-card-header label{
+    border: solid 1px white;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 0.8em;
+    height: 1.2em;
+    line-height: 1.1em;
+    padding: 0 0.5em;
+    /*color: var(--bkcolor);*/
+    /*background-color: white;*/
+}
+.show-body-card-footer-a{
+    /*无法加入hover功能，因为其父类已经具备hover*/
+    display: inline-block;
+    line-height: 33px;
+    width: 31%;
+    text-align: center;
+    color: var(--bkcolor);
+    font-size: 1em;
+    text-decoration: none;
+}
+.not-found{
+    text-align: center;
+    font-size: 2em;
+    color: grey;
+    line-height: 4em;
+}
+@media screen and (max-width: 768px){
+    .show-body-card{
+        margin: 8px auto;
+        width: 90%;
+        box-shadow: lightgray 0 0 20px 1px;
+    }
+    .inventory-name{
+        font-size: 1.2em;
+        /*line-height: 1.5em;*/
+        font-weight: normal;
+    }
+    .show-body-card-footer{
+        background-color: #dedede;
+    }
+}

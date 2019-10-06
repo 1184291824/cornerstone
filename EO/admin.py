@@ -39,8 +39,15 @@ class NoteAdmin(admin.ModelAdmin):
         'pk',
         'name',
         'file',
-        # 'group',
-        # 'user',
+        'time',
     ]
 
     search_fields = ['name']
+
+
+@admin.register(NoteRecode)
+class NoteRecodeAdmin(admin.ModelAdmin):
+    list_display = [
+        'pk',
+        'time',
+    ]

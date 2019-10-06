@@ -1,0 +1,113 @@
+{% extends 'PC/base/baseChart.html' %}
+{% block title %}
+网站访问量统计
+{% endblock %}
+{% block style %}
+<style>
+#location,
+#system{
+    max-width: 400px;
+}
+</style>
+{% endblock %}
+{% block body-title %}
+网站访问量统计
+{% endblock %}
+
+{% block chart-canvas %}
+    <canvas class="chart-item" id="ask" width="400" height="200"></canvas>
+    <canvas class="chart-item" id="system" width="200" height="200"></canvas>
+    <canvas class="chart-item" id="location" width="200" height="200"></canvas>
+{% endblock %}
+{% block script-more %}
+<script>
+$(document).ready(function () {
+    // 访问日期分布
+    let ctx = document.getElementById('ask').getContext('2d'); // 获取chart
+    if (window.screen.width < 768) { // 当屏幕缩小到768px以下时，改变chart的纵横比
+        $('#ask').attr({
+            'height': '250vw',
+            'width': '',
+        });
+    }
+    let str = [
+        {% for foo in time_label %}
+            '{{ foo.month }}月{{ foo.day }}日',
+        {% endfor %}
+    ]; //横轴内容
+    let data = [
+        {% for foo in ask_record_display %}{{ foo }}, {% endfor %}
+    ]; //数据
+    str.reverse(); //将数组反过来
+    data.reverse();
+    options.title.text = '日访问量统计(总访问次数：{{ wholeCount }})';  //设置图标标题
+    normal_datasets.label = '日访问量';  // 设置数据标题
+    normal_datasets.data = data;  // 设置数据
+    var ask_chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line', // 线性图表
+
+        // The data for our dataset
+        data: {
+            labels: str,
+            datasets: [normal_datasets],
+        },
+        options: options,
+    });
+
+    // 访问系统分布
+    ctx = document.getElementById('system').getContext('2d');
+    str = [
+        'Android',
+        'Windows',
+        'iOS',
+    ];
+    data = {{ system_num }};
+    options.title.text = '访问系统分布';  // 设置图表标题
+    options.scales = '';  // 去掉分割线
+    var system_chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'doughnut', // 面包圈图表
+        data: {
+            labels: str,
+            datasets: [{
+                label: str,
+                backgroundColor: ["rgb(255, 99, 132)","rgb(54, 162, 235)","rgb(255, 205, 86)"],
+                data: data,
+            }],
+        },
+        options: options,
+    });
+
+    //访问地理位置分布
+    ctx = document.getElementById('location').getContext('2d');
+    str = ['上海','江苏','浙江','广东','河北','陕西','未知','其他'];
+    data = {{ location_num }};
+    options.title.text = '访问位置分布';  // 设置图表标题
+    var location_chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'doughnut', // 面包圈图表
+        data: {
+            labels: str,
+            datasets: [{
+                label: str,
+                backgroundColor: [
+                    "#ff6384",
+                    "#ff9f40",
+                    "#ffcd56",
+                    "#4bc0c0",
+                    "#36a2eb",
+                    "#EB83E9",
+                    "#868687",
+                    "#42c878",
+                ],
+                data: data,
+            }],
+        },
+        options: options,
+    });
+
+});
+
+</script>
+{% endblock %}
