@@ -39,6 +39,8 @@ class NoteAdmin(admin.ModelAdmin):
         'pk',
         'name',
         'file',
+        'group',
+        'user',
         'time',
     ]
 
@@ -51,4 +53,6 @@ class NoteRecodeAdmin(admin.ModelAdmin):
         'pk',
         'time',
         'note_recode_category',
+        'note',
+        'user',
     ]

@@ -144,7 +144,7 @@
                     let result={};
                     let html_value='';
                     for (result in result_list){
-                        html_value += '<li class="header-menu-li"><a href="" class="header-menu-a">'+result_list[result].name+'</a></li>';
+                        html_value += '<li class="header-menu-li"><a href="{% url 'EO:note_show' %}?id='+ result_list[result].id +'" class="header-menu-a">'+result_list[result].name+'</a></li>';
                     }
                     return html_value;
                 })

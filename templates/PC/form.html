@@ -7,7 +7,7 @@
 {% block body %}
     <div class="body-title"><label>{{ title }}</label></div>
     <div class="form">
-    <form class="pure-form pure-form-aligned" method="post" action="./">
+    <form class="pure-form pure-form-aligned" method="post" action="./" enctype="multipart/form-data">
     <fieldset>
     {% csrf_token %}
     {% for form_item in form %}

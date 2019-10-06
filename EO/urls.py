@@ -17,8 +17,9 @@ urlpatterns = [
     path('user/personalInformation/', user.personal_information, name='personal_information'),
 
 
-    path('note/group/', note.note_group, name='note_group'),
-    path('note/group/create', note.create_group, name='create_group'),
-    path('note/create', note.create_note, name='create_note'),
+    path('note/group/', note.get_note_group, name='note_group'),
+    path('note/group/create/', note.create_group, name='create_group'),
+    path('note/create/', note.create_note, name='create_note'),
+    path('note/show/', note.note_show, name='note_show'),
 
 ]

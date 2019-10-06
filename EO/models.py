@@ -37,8 +37,8 @@ class Note(models.Model):
     """笔记"""
     name = models.CharField(max_length=30, verbose_name='笔记名')
     file = models.FileField(verbose_name='笔记的markdown文件', upload_to='notefile')
-    group = models.ManyToManyField(NoteGroup, verbose_name='笔记的组', related_name='NoteGroup')
-    user = models.ManyToManyField(User, verbose_name='笔记创建人', related_name='NoteUser')
+    group = models.ForeignKey(NoteGroup, verbose_name='笔记的组', related_name='NoteGroup', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, verbose_name='笔记创建人', related_name='NoteUser', on_delete=models.CASCADE)
     time = models.DateField(auto_now=True, verbose_name='创建时间')
 
     def __str__(self):
@@ -57,8 +57,8 @@ class NoteRecode(models.Model):
         (0, '创建'),
         (1, '修改'),
     )
-    note = models.ManyToManyField(Note, related_name='note', verbose_name='笔记')
-    user = models.ManyToManyField(User, related_name='user', verbose_name='修改人')
+    note = models.ForeignKey(Note, related_name='note', verbose_name='笔记', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name='user', verbose_name='修改人', on_delete=models.CASCADE)
     time = models.DateField(auto_now=True, verbose_name='修改时间')
     note_recode_category = models.PositiveSmallIntegerField(
         default=0,
@@ -67,7 +67,7 @@ class NoteRecode(models.Model):
     )
 
     # def __str__(self):
-    #     return self.id
+    #     return self.note.name
 
     class Meta:
         db_table = 'NoteRecode'

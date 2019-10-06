@@ -7,14 +7,18 @@ import json
 
 def test(request):
     """测试"""
-    file = Note.objects.get(id=1)
-    text = file.file.open().read().decode()
-    return HttpResponse(text)
+    # file = Note.objects.get(id=3)
+    # text = file.file.open().read().decode()
+    # return HttpResponse(text)
+    return render(request, 'PC/success.html',{
+        'message': '恭喜你注册成功了我们的系统，我要回家睡觉奥二零ask的防护距离喀什地方',
+        'title': '成功',
+    })
 
 
 def index(request):
     """返回主页"""
-    return render(request, 'PC/index.html',{
+    return render(request, 'PC/index.html', {
         'title': '主页',
     })
 
