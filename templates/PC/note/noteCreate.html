@@ -1,7 +1,7 @@
 {% extends 'PC/base/baseForm.html' %}
 {% load staticfiles %}
-{% block title %}创建新的库存项目{% endblock %}
-{% block body-title %}创建新的库存项目{% endblock %}
+{% block title %}创建新的笔记{% endblock %}
+{% block body-title %}创建新的笔记{% endblock %}
 {% block style %}
 <style>
     .pure-form-aligned .pure-control-group label{
@@ -11,33 +11,34 @@
 {% endblock %}
 {% block form %}
 <div class="pure-control-group">
-    <label for="inventory_group">库存组</label>
-    <select name="inventory_group" id="inventory_group" required>
+    <label for="note_group">笔记组</label>
+    <select name="note_group" id="note_group" required>
         {% for group in group_list %}
         <option value="{{ group.auto_id }}">{{ group.name }}</option>
-        {% endfor %}
+        {% endfor %}.
+    
     </select>
 </div>
 <div class="pure-control-group">
-    <label for="inventory_name">库存名称</label>
-    <input type="text" id="inventory_name" name="inventory_name" value="" placeholder="请输入库存名称" required maxlength="20"/>
+    <label for="note_name">笔记名称</label>
+    <input type="text" id="note_name" name="note_name" value="" placeholder="请输入笔记名称" required maxlength="30"/>
 </div>
-<div class="pure-control-group">
-    <label for="inventory_num">库存数量</label>
-    <input type="number" id="inventory_num" name="inventory_num" value="" placeholder="请输入库存数量" max="32768" min="0" required />
-</div>
-<div class="pure-control-group">
-    <label for="inventory_unit">单位</label>
-    <input type="text" id="inventory_unit" name="inventory_unit" value="" placeholder="如：个" maxlength="12" required/>
-</div>
-<div class="pure-control-group">
-    <label for="inventory_price">单价(元)</label>
-    <input type="number" id="inventory_price" name="inventory_price" value="" placeholder="请输入库存单价" step="0.001" required/>
-</div>
-<div class="pure-control-group">
-    <label for="inventory_mark">备注</label>
-    <input type="text" id="inventory_mark" name="inventory_mark" value="" placeholder="请输入备注（300字以内）" maxlength="300" required/>
-</div>
+{#<div class="pure-control-group">#}
+{#    <label for="note_num">库存数量</label>#}
+{#    <input type="number" id="note_num" name="note_num" value="" placeholder="请输入库存数量" max="32768" min="0" required />#}
+{#</div>#}
+{#<div class="pure-control-group">#}
+{#    <label for="inventory_unit">单位</label>#}
+{#    <input type="text" id="inventory_unit" name="inventory_unit" value="" placeholder="如：个" maxlength="12" required/>#}
+{#</div>#}
+{#<div class="pure-control-group">#}
+{#    <label for="inventory_price">单价(元)</label>#}
+{#    <input type="number" id="inventory_price" name="inventory_price" value="" placeholder="请输入库存单价" step="0.001" required/>#}
+{#</div>#}
+{#<div class="pure-control-group">#}
+{#    <label for="inventory_mark">备注</label>#}
+{#    <input type="text" id="inventory_mark" name="inventory_mark" value="" placeholder="请输入备注（300字以内）" maxlength="300" required/>#}
+{#</div>#}
 {#<div class="pure-control-group">#}
 {#    <label for="code">验证码</label>#}
 {#    <input type="text" name="code" id="code" value="" placeholder="验证码" maxlength="4" minlength="4" required style="width: calc(17em - 100px - 5px)"/>#}

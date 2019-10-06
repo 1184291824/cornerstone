@@ -39,7 +39,7 @@ class Note(models.Model):
     file = models.FileField(verbose_name='笔记的markdown文件', upload_to='notefile')
     group = models.ManyToManyField(NoteGroup, verbose_name='笔记的组', related_name='NoteGroup')
     user = models.ManyToManyField(User, verbose_name='笔记创建人', related_name='NoteUser')
-    time = models.DateField(auto_created=True, verbose_name='创建时间')
+    time = models.DateField(auto_now=True, verbose_name='创建时间')
 
     def __str__(self):
         return self.name
@@ -52,12 +52,22 @@ class Note(models.Model):
 
 class NoteRecode(models.Model):
     """笔记修改记录"""
+    '''选项'''
+    NOTE_RECODE_CHOICE = (
+        (0, '创建'),
+        (1, '修改'),
+    )
     note = models.ManyToManyField(Note, related_name='note', verbose_name='笔记')
     user = models.ManyToManyField(User, related_name='user', verbose_name='修改人')
-    time = models.DateField(auto_created=True, verbose_name='修改时间')
+    time = models.DateField(auto_now=True, verbose_name='修改时间')
+    note_recode_category = models.PositiveSmallIntegerField(
+        default=0,
+        choices=NOTE_RECODE_CHOICE,
+        verbose_name='操作类别'
+    )
 
-    def __str__(self):
-        return self.note.name
+    # def __str__(self):
+    #     return self.id
 
     class Meta:
         db_table = 'NoteRecode'

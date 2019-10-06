@@ -50,4 +50,5 @@ class NoteRecodeAdmin(admin.ModelAdmin):
     list_display = [
         'pk',
         'time',
+        'note_recode_category',
     ]

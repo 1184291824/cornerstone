@@ -1,0 +1,17 @@
+{% extends 'PC/base/baseDetail.html' %}
+{% load staticfiles %}
+{% block title %}个人信息{% endblock %}
+{% block body-title %}
+个人信息
+{% endblock %}
+{% block detail-contain %}
+    <h1>我的ID</h1>
+    <li>{{ user.user_id}}</li>
+    <h1>姓名</h1>
+    <li>{{ user.user_name }}</li>
+    <h1>注册时间</h1>
+    <li>{{ user.user_create_time }}</li>
+    <h1>笔记</h1>
+    <li>创建 {{ recode_create_num }}</li>
+    <li>修正 {{ recode_change_num }}</li>
+{% endblock %}

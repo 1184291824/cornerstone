@@ -1,7 +1,7 @@
 {% extends 'PC/base/baseForm.html' %}
 {% load staticfiles %}
-{% block title %}创建新的库存分组{% endblock %}
-{% block body-title %}创建新的库存分组{% endblock %}
+{% block title %}创建新的笔记分组{% endblock %}
+{% block body-title %}创建新的笔记分组{% endblock %}
 {% block style %}
 <style>
 .pure-form-aligned .pure-control-group label{
@@ -37,7 +37,7 @@ $(document).ready(function () {
             }
         if (flag){
             $.ajax({
-                url: "{% url 'BPlan:inventory_group_create_add' %}",
+                url: "{% url 'EO:create_group' %}",
                 type: 'POST',
                 data: {
                     'name': name.val(),

@@ -1,0 +1,24 @@
+{% extends 'PC/base/base.html' %}
+{% load staticfiles %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'PC/css/form.css' %}">
+{#{% block style %}{% endblock %}#}
+{% endblock %}
+{% block body %}
+    <div class="body-title"><label>{{ title }}</label></div>
+    <div class="form">
+    <form class="pure-form pure-form-aligned" method="post" action="./">
+    <fieldset>
+    {% csrf_token %}
+    {% for form_item in form %}
+        <div class="pure-control-group">
+            {{ form_item.label_tag }}
+            {{ form_item}}
+        </div>
+    {% endfor %}
+        <div class="error">{{ message }}</div>
+        <button class="form-button" type="submit"><i class="iconfont icon-wancheng"></i> 提交</button>
+    </fieldset>
+    </form>
+    </div>
+{% endblock %}

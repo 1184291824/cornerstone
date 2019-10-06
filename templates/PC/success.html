@@ -1,0 +1,42 @@
+{% extends 'PC/base/baseShow.html' %}
+{#{% block title %}#}
+{#成功#}
+{#{% endblock %}#}
+{% block style %}
+<style>
+.show-body{
+    padding-top: 100px;
+}
+.show-body-card{
+    height: 200px;
+    width: 460px;
+}
+.show-body-card-header{
+    height: 2.2em;
+}
+.show-body-card-body{
+    margin: 10px 1em;
+    text-indent: 2em;
+    font-size: 1em;
+}
+@media screen and (max-width: 768px){
+    .show-body-card{
+        height: 200px;
+        width: 90%;
+    }
+}
+</style>
+{% endblock %}
+{% block body-title %}
+{{ title }}
+{% endblock %}
+{% block show-body %}
+    <div class="show-body-card">
+        <div class="show-body-card-header">
+            <div class="inventory-name"><i class="iconfont icon-error"></i> 提示</div>
+        </div>
+        <div class="show-body-card-body">
+            {{ message }}
+        </div>
+    </div>
+{% endblock %}
