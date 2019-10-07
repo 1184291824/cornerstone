@@ -21,5 +21,6 @@ urlpatterns = [
     path('note/group/create/', note.create_group, name='create_group'),
     path('note/create/', note.create_note, name='create_note'),
     path('note/show/', note.note_show, name='note_show'),
+    path('note/show/detail/', note.note_show_detail, name='note_show_detail'),
 
 ]

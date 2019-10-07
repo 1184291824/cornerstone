@@ -7,11 +7,23 @@
     {% endblock %}
 {% endblock %}
 {% block body %}
-<div class="body-title"><label>{% block body-title %}{% endblock %}</label></div>
+<div class="body-title"><label>{% block body-title %}{{ title }}{% endblock %}</label></div>
     <div class="detail">
-        <div class="detail-contain">{% block detail-contain %}{% endblock %}</div>
-{#        <div class="detail-footer">#}
-{#            <div class="pure-g">{% block detail-footer %}{% endblock %}</div>#}
-{#        </div>#}
+        <div class="detail-contain">{% block detail-contain %}{{ markdown_html | safe }}{% endblock %}</div>
+        <div class="detail-footer">
+            <div class="pure-g">{% block detail-footer %}{% endblock %}</div>
+        </div>
     </div>
+
+{% endblock %}
+{% block script %}
+<script>
+window.onload=function () {
+    let imgs = document.getElementsByTagName("img");
+    let img;
+    for (img in imgs){
+        imgs[img].src = imgs[img].src.split("?")[0];
+    }
+}
+</script>
 {% endblock %}

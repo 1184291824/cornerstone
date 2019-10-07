@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from EO.models import NoteGroup, Note, NoteRecode, User
 import json
+import markdown
 from EO.form import NoteGroupForm, NoteForm
 
 # Create your views here.
@@ -35,7 +36,7 @@ def create_group(request):
 
 def get_note_group(request):
     """返回所有的笔记分组的名称和数量"""
-    note_group_list = NoteGroup.objects.all()
+    note_group_list = NoteGroup.objects.all().order_by('name')
     result_list = []
     for note_group_item in note_group_list:
         result = {
@@ -90,10 +91,28 @@ def note_show(request):
     """获取笔记的列表"""
     if request.session.get('login_status', 0):
         group = NoteGroup.objects.get(id=request.GET.get('id', 1))
-        note_list = Note.objects.filter(group=group).order_by('time')
+        note_list = Note.objects.filter(group=group).order_by('-time')
         return render(request, 'PC/show.html', {
             'note_list': note_list,
             'title': group.name,
+        })
+    else:
+        return redirect('EO:index')
+
+
+def note_show_detail(request):
+    """展示笔记的详细信息"""
+    if request.session.get('login_status', 0):
+        note = Note.objects.get(id=request.GET.get('id', 1))
+        text = note.file.open().read().decode()
+        if text.startswith('\ufeff'):
+            text = text[1::]
+        #     print(text)
+        # print(text.encode())
+        html = markdown.markdown(text)
+        return render(request, 'PC/markdown.html', {
+            'markdown_html': html,
+            'title': note.name,
         })
     else:
         return redirect('EO:index')
