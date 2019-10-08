@@ -112,7 +112,19 @@ def note_show_detail(request):
         html = markdown.markdown(text)
         return render(request, 'PC/markdown.html', {
             'markdown_html': html,
+            'note_id': note.id,
             'title': note.name,
         })
     else:
         return redirect('EO:index')
+
+
+def note_show_record(request):
+    """展示笔记的修正记录"""
+    if request.session.get('login_status', 0):
+        note = Note.objects.get(id=request.GET.get('id', 1))
+        note_recode_list = NoteRecode.objects.filter(note=note)
+        return render(request, 'PC/showRecord.html', {
+            'title': '修正记录',
+            'note_list': note_recode_list,
+        })

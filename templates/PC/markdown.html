@@ -9,7 +9,7 @@
 {#{% endblock %}#}
 {% block detail-footer %}
 <div class="pure-u-1 pure-u-md-1-2">
-    <a href="#">查看笔记的修正记录</a>
+    <a href="{% url 'EO:note_show_record' %}?id={{ note_id }}">查看笔记的修正记录</a>
 </div>
 <div class="pure-u-1 pure-u-md-1-2">
     <a href="#">修改这篇笔记</a>
