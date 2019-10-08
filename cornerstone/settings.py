@@ -42,14 +42,14 @@ if PythonAnywhere is False:
     }
 elif PythonAnywhere is True:
     DEBUG = False
-    ALLOWED_HOSTS = ['myz.pythonanywhere.com']
+    ALLOWED_HOSTS = ['eo16.pythonanywhere.com']
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': "MYZ$bplan",
-            'USER': 'MYZ',
-            'PASSWORD': 'MzxYzyZyy',
-            'HOST': 'MYZ.mysql.pythonanywhere-services.com',
+            'NAME': "EO16$cornerstone",
+            'USER': 'EO16',
+            'PASSWORD': 'EO16mzxsql',
+            'HOST': 'EO16.mysql.pythonanywhere-services.com',
         }
     }
 

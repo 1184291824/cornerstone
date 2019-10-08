@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f1f55bd-7dd9-4d2b-b66e-81b2dff3b78f" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/static/PC/css/detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/PC/css/detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cornerstone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cornerstone/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/base/baseChart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/base/baseForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/customer/customerChangeDetail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/customer/customerCreate.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/customer/customerSearch.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/customer/customerShowAll.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/customer/customerShowDetail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/customer/customerTracking.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/forbidden.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/note/inventoryChange.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/note/inventoryChangeDetail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/note/inventoryOperationChart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/note/inventoryOperationSearch.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/note/inventoryOperationShow.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/note/inventoryShowDetail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/note/noteCreate.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/note/noteGroupCreate.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/note/noteShow.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/更新日志.md" beforeDir="false" afterPath="$PROJECT_DIR$/更新日志.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,9 +75,18 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="96">
-                <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="16" />
+                <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cornerstone/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="642">
+              <caret line="51" column="61" lean-forward="true" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -91,7 +118,6 @@
       <list>
         <option value="$PROJECT_DIR$/cornerstone/__init__.py" />
         <option value="$PROJECT_DIR$/EO/apps.py" />
-        <option value="$PROJECT_DIR$/cornerstone/settings.py" />
         <option value="$PROJECT_DIR$/gitignore" />
         <option value="$PROJECT_DIR$/cornerstone/urls.py" />
         <option value="$PROJECT_DIR$/EO/views.py" />
@@ -127,6 +153,7 @@
         <option value="$PROJECT_DIR$/templates/PC/form.html" />
         <option value="$PROJECT_DIR$/EO/views/note.py" />
         <option value="$PROJECT_DIR$/static/PC/css/detail.css" />
+        <option value="$PROJECT_DIR$/cornerstone/settings.py" />
         <option value="$PROJECT_DIR$/更新日志.md" />
       </list>
     </option>
@@ -301,16 +328,15 @@
       <workItem from="1570337972538" duration="33444000" />
       <workItem from="1570438079392" duration="15615000" />
       <workItem from="1570502970099" duration="4015000" />
-      <workItem from="1570510821538" duration="4965000" />
+      <workItem from="1570510821538" duration="6572000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62259000" />
+    <option name="totallyTimeSpent" value="63866000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20842217" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -347,13 +373,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EO/views/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cornerstone/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="137" selection-start-line="137" selection-end-line="137" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EO/apps.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -665,11 +684,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cornerstone/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="51" column="61" lean-forward="true" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/更新日志.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="96">
-            <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="16" />
+            <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
           </first_editor>
           <second_editor />
         </state>
