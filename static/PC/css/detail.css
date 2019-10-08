@@ -25,7 +25,8 @@
 }
 .detail-contain ul,
 .detail-contain ol{
-    padding-inline-start: 20px;
+    /*padding-inline-start: 20px;*/
+    padding-left: 20px;
 }
 .detail-contain hr{
     display: none;
@@ -104,7 +105,8 @@
     }
     .detail-contain ul,
     .detail-contain ol{
-        padding-inline-start: 10px;
+        /*padding-inline-start: 10px;*/
+        padding-left: 10px;
     }
     .detail-footer a{
         width: 90%;
