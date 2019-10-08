@@ -23,5 +23,6 @@ urlpatterns = [
     path('note/show/', note.note_show, name='note_show'),
     path('note/show/detail/', note.note_show_detail, name='note_show_detail'),
     path('note/show/record/', note.note_show_record, name='note_show_record'),
+    path('note/change/', note.change_note, name='change_note'),
 
 ]

@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from EO.models import NoteGroup, Note, NoteRecode, User
 import json
 import markdown
-from EO.form import NoteGroupForm, NoteForm
+from EO.form import NoteGroupForm, NoteForm, NoteFormChange
 
 # Create your views here.
 
@@ -110,9 +110,10 @@ def note_show_detail(request):
         #     print(text)
         # print(text.encode())
         html = markdown.markdown(text)
+        note.file.close()
         return render(request, 'PC/markdown.html', {
             'markdown_html': html,
-            'note_id': note.id,
+            'note': note,
             'title': note.name,
         })
     else:
@@ -128,3 +129,34 @@ def note_show_record(request):
             'title': '修正记录',
             'note_list': note_recode_list,
         })
+
+
+def change_note(request):
+    """修改笔记"""
+    if request.session.get('login_status', 0):
+        if request.method == 'POST':
+            user = User.objects.get(user_id=request.session['user_id'])
+            note = Note.objects.get(id=request.POST['id'])
+            note.file.delete()
+            note.file = request.FILES['file']
+            note.save()
+            note_recode = NoteRecode.objects.create(
+                note=note,
+                user=user,
+                note_recode_category=1,
+            )
+            note_recode.save()
+            return render(request, 'PC/success.html', {
+                'message': '您刚刚成功修改了一篇助理笔记：'+request.POST['name']+'，快去看看吧~',
+                'title': '创建成功',
+            })
+        else:
+            form = NoteFormChange()
+            form.fields['name'].widget.attrs.update({'value': request.GET['name']})
+            form.fields['id'].widget.attrs.update({'value': request.GET['id']})
+            return render(request, 'PC/form.html', {
+                'title': '修改笔记',
+                'form': form,
+            })
+    else:
+        return redirect('EO:index')

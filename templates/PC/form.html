@@ -12,7 +12,9 @@
     {% csrf_token %}
     {% for form_item in form %}
         <div class="pure-control-group">
+            {% if not form_item.is_hidden %}
             {{ form_item.label_tag }}
+            {% endif %}
             {{ form_item}}
         </div>
     {% endfor %}
@@ -22,3 +24,10 @@
     </form>
     </div>
 {% endblock %}
+{#{% block script %}#}
+{#<script>#}
+{#window.onload=function () {#}
+{#    console.log({% for form_item in form %}{{ form_item.is_hidden }}{% endfor %})#}
+{#}#}
+{#</script>#}
+{#{% endblock %}#}

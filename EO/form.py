@@ -26,3 +26,10 @@ class NoteForm(forms.Form):
     name = forms.CharField(max_length=30, label='笔记名称')
     file = forms.FileField(label='笔记文件(md)')
     group = forms.ModelChoiceField(label='笔记组', queryset=NoteGroup.objects.all(), empty_label=None)
+
+
+class NoteFormChange(forms.Form):
+    """笔记修改"""
+    name = forms.CharField(max_length=30, label='笔记名称', widget=forms.TextInput(attrs={'readonly': 'readonly'}))
+    id = forms.IntegerField(widget=forms.HiddenInput())
+    file = forms.FileField(label='笔记文件(md)')
