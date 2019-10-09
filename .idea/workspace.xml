@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6f1f55bd-7dd9-4d2b-b66e-81b2dff3b78f" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/PC/css/detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/PC/css/detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EO/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cornerstone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cornerstone/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cornerstone/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cornerstone/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PC/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PC/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/更新日志.md" beforeDir="false" afterPath="$PROJECT_DIR$/更新日志.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +23,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EO/views/note.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="112" column="25" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
+            <state relative-caret-position="216">
+              <caret line="89" selection-start-line="89" selection-end-line="99" selection-end-column="35" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -41,13 +45,43 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EO/urls.py">
+        <entry file="file://$PROJECT_DIR$/EO/AppApi/apiUrls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="25" column="63" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
+            <state relative-caret-position="216">
+              <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EO/AppApi/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/PC/css/show.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/PC/show.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -57,27 +91,42 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="96">
-                <caret line="4" column="9" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="9" />
+                <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cornerstone/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="835">
-              <caret line="51" column="61" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
+            <state relative-caret-position="282">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/PC/css/detail.css">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EO/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
+            <state relative-caret-position="624">
+              <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cornerstone/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="552">
+              <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+              <folding>
+                <element signature="e#635#667#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -87,8 +136,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -101,7 +150,6 @@
         <option value="$PROJECT_DIR$/cornerstone/__init__.py" />
         <option value="$PROJECT_DIR$/EO/apps.py" />
         <option value="$PROJECT_DIR$/gitignore" />
-        <option value="$PROJECT_DIR$/cornerstone/urls.py" />
         <option value="$PROJECT_DIR$/EO/views.py" />
         <option value="$PROJECT_DIR$/files/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -121,7 +169,6 @@
         <option value="$PROJECT_DIR$/templates/PC/success.html" />
         <option value="$PROJECT_DIR$/notefile/README.md" />
         <option value="$PROJECT_DIR$/static/PC/css/form.css" />
-        <option value="$PROJECT_DIR$/templates/PC/show.html" />
         <option value="$PROJECT_DIR$/static/PC/css/show.css" />
         <option value="$PROJECT_DIR$/static/PC/css/base.css" />
         <option value="$PROJECT_DIR$/notefile/Django项目部署到pythonanywhere及需要注意的问题.md" />
@@ -129,14 +176,19 @@
         <option value="$PROJECT_DIR$/templates/PC/base/base.html" />
         <option value="$PROJECT_DIR$/notefile/csdn_export_md_1.md" />
         <option value="$PROJECT_DIR$/templates/PC/showRecord.html" />
-        <option value="$PROJECT_DIR$/EO/urls.py" />
         <option value="$PROJECT_DIR$/templates/PC/markdown.html" />
         <option value="$PROJECT_DIR$/EO/form.py" />
         <option value="$PROJECT_DIR$/templates/PC/form.html" />
         <option value="$PROJECT_DIR$/EO/views/note.py" />
-        <option value="$PROJECT_DIR$/cornerstone/settings.py" />
-        <option value="$PROJECT_DIR$/更新日志.md" />
         <option value="$PROJECT_DIR$/static/PC/css/detail.css" />
+        <option value="$PROJECT_DIR$/EO/AppApi/urls.py" />
+        <option value="$PROJECT_DIR$/cornerstone/urls.py" />
+        <option value="$PROJECT_DIR$/EO/AppApi/apiUrls.py" />
+        <option value="$PROJECT_DIR$/EO/AppApi/views.py" />
+        <option value="$PROJECT_DIR$/EO/urls.py" />
+        <option value="$PROJECT_DIR$/templates/PC/show.html" />
+        <option value="$PROJECT_DIR$/更新日志.md" />
+        <option value="$PROJECT_DIR$/cornerstone/settings.py" />
       </list>
     </option>
   </component>
@@ -154,7 +206,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -171,6 +222,12 @@
               <item name="cornerstone" type="b2602c69:ProjectViewProjectNode" />
               <item name="cornerstone" type="462c0819:PsiDirectoryNode" />
               <item name="EO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cornerstone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cornerstone" type="462c0819:PsiDirectoryNode" />
+              <item name="EO" type="462c0819:PsiDirectoryNode" />
+              <item name="AppApi" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cornerstone" type="b2602c69:ProjectViewProjectNode" />
@@ -237,6 +294,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -311,18 +369,19 @@
       <workItem from="1570438079392" duration="15615000" />
       <workItem from="1570502970099" duration="4015000" />
       <workItem from="1570510821538" duration="8380000" />
-      <workItem from="1570542623953" duration="510000" />
+      <workItem from="1570542623953" duration="2122000" />
+      <workItem from="1570614188394" duration="6631000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66184000" />
+    <option name="totallyTimeSpent" value="74427000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21055438" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21268657" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -349,13 +408,8 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gitignore" />
-    <entry file="file://$PROJECT_DIR$/files/更新日志_0OdRp5c.md" />
     <entry file="file://$PROJECT_DIR$/files/README.md" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EO/views/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/EO/apps.py">
@@ -367,16 +421,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EO/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cornerstone/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="23" column="74" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="74" />
-          <folding>
-            <element signature="e#635#667#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/PC/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -416,16 +460,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/PC/note/noteShow.html" />
-    <entry file="file://$PROJECT_DIR$/EO/views/common.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EO/views/user.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1896">
@@ -557,13 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/PC/show.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Python/Lib/site-packages/Django-2.1.3-py3.7.egg/django/forms/widgets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
@@ -592,6 +619,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/EO/views/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EO/views/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EO/views/note.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="89" selection-start-line="89" selection-end-line="99" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/EO/form.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="768">
@@ -602,27 +652,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cornerstone/settings.py">
+    <entry file="file://$PROJECT_DIR$/static/PC/css/detail.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="835">
-          <caret line="51" column="61" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
+        <state relative-caret-position="498">
+          <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/更新日志.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="96">
-            <caret line="4" column="9" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="9" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/EO/AppApi/apiUrls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EO/views/note.py">
+    <entry file="file://$PROJECT_DIR$/EO/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="112" column="25" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
+        <state relative-caret-position="624">
+          <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cornerstone/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding>
+            <element signature="e#635#667#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/PC/show.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EO/AppApi/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
           </folding>
@@ -631,25 +708,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/PC/css/show.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        <state relative-caret-position="384">
+          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EO/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="25" column="63" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/更新日志.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="96">
+            <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/PC/css/detail.css">
+    <entry file="file://$PROJECT_DIR$/cornerstone/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
+        <state relative-caret-position="282">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>

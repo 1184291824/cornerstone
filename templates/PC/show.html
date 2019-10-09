@@ -11,9 +11,9 @@
         <div class="pure-u-1 pure-u-md-1-3">
             <a class="show-body-card" href="{% url 'EO:note_show_detail' %}?id={{ note.id }}">
                 <div class="note-icon">{{ note.name | slice:'1' }}</div>
-                    <div class="note-name"> {{ note.name }}</div>
-                    <div class="note-user"> {{ note.user }}</div>
-                    <div class="note-time">{{ note.time.month }}月{{ note.time.day }}日</div>
+                <div class="note-name"> {{ note.name }}</div>
+                <div class="note-user"> {{ note.user }}</div>
+                <div class="note-time">{{ note.time.month }}月{{ note.time.day }}日</div>
             </a>
         </div>
     {% endfor %}

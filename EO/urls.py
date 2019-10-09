@@ -1,8 +1,9 @@
 from django.urls import path
 from EO.views import common, user, note
+from EO.AppApi import views
 from django.views.generic import RedirectView
 
-app_name = "BPlan"
+app_name = "EO"
 
 
 urlpatterns = [
