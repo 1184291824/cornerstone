@@ -8,5 +8,6 @@ app_name = "Api"
 urlpatterns = [
     path('note/group/', views.get_note_group),
     path('note/show/', views.note_show),
+    path('apk/', views.download),
 
 ]
