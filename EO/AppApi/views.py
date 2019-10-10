@@ -1,5 +1,5 @@
 from django.shortcuts import HttpResponse
-from django.http import FileResponse
+# from django.http import FileResponse
 from EO.models import NoteGroup, Note, NoteRecode, User
 import json
 import markdown
@@ -45,8 +45,8 @@ def note_show(request):
     if check_app(request):
         group = NoteGroup.objects.get(id=request.GET.get('id', 1))
         note_list = Note.objects.filter(group=group).order_by('-time')
-        if note_list:
-            return HttpResponse('EmptyGroup')
+        # if note_list:
+        #     return HttpResponse('EmptyGroup')
         result_list = []
         for note_item in note_list:
             result = {
@@ -59,10 +59,16 @@ def note_show(request):
         return cors_response(result_list)
 
 
-def download(request):
-    """安装包下载"""
-    file = open('/static/App/H533C5063_huawei_1010133633.apk', 'rb')
-    response = FileResponse(file)
-    response['Content-Type'] = 'application/octet-stream'
-    response['Content-Disposition'] = 'attachment;filename="基石.apk"'
-    return response
+# def download(request):
+#     """安装包下载"""
+#     file = open('/static/App/H533C5063_huawei_1010133633.apk', 'rb')
+#     response = FileResponse(file)
+#     response['Content-Type'] = 'application/octet-stream'
+#     response['Content-Disposition'] = 'attachment;filename="基石.apk"'
+#     return response
+
+
+def update_get_version(request):
+    """获取最新版本号"""
+    if check_app(request):
+        return HttpResponse(90)
