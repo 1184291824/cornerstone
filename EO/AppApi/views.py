@@ -38,14 +38,18 @@ def get_note_group(request):
             }
             result_list.append(result)
         return cors_response(result_list)
+    else:
+        return cors_response({'error': 'BadRequest'})
 
 
 def note_show(request):
     """获取笔记的列表"""
     if check_app(request):
         group = NoteGroup.objects.get(id=request.GET.get('id', 1))
+        if group.num == 0:
+            return cors_response([{'result': 'EmptyGroup'}])
         note_list = Note.objects.filter(group=group).order_by('-time')
-        # if note_list:
+        # if len(note_list) == 0:
         #     return HttpResponse('EmptyGroup')
         result_list = []
         for note_item in note_list:
@@ -57,6 +61,30 @@ def note_show(request):
             }
             result_list.append(result)
         return cors_response(result_list)
+    else:
+        return cors_response({'error': 'BadRequest'})
+
+
+def note_detail(request):
+    """获取笔记内容"""
+    if check_app(request):
+        note = Note.objects.get(id=request.GET.get('id', 1))
+        text = note.file.open().read().decode()
+        if text.startswith('\ufeff'):
+            text = text[1::]
+        #     print(text)
+        # print(text.encode())
+        html = markdown.markdown(text)
+        note.file.close()
+        result = {
+            'name': note.name,
+            'html': html,
+            'user': note.user.user_name,
+            'time': str(note.time),
+        }
+        return cors_response(result)
+    else:
+        return cors_response({'error': 'BadRequest'})
 
 
 # def download(request):
