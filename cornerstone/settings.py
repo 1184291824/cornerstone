@@ -24,8 +24,8 @@ SECRET_KEY = 'f!asqk8^es)7_vk&%-e87oz#o9c)28!e7^k#0(dcpe^j+p+^4v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-# PythonAnywhere = False  # 设为False是为了本地支持
-PythonAnywhere = True  # 设为True是为了上线PythonAnywhere支持
+PythonAnywhere = False  # 设为False是为了本地支持
+# PythonAnywhere = True  # 设为True是为了上线PythonAnywhere支持
 
 if PythonAnywhere is False:
     DEBUG = True
@@ -68,17 +68,52 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'EO.apps.EoConfig',
+    'corsheaders',  # 跨域请求
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # 跨域请求中间件
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+# 跨域增加忽略
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = (
+    '*'
+)
+
+CORS_ALLOW_METHODS = (
+    # 'DELETE',
+    'GET',
+    'OPTIONS',
+    # 'PATCH',
+    # 'POST',
+    # 'PUT',
+    # 'VIEW',
+)
+
+CORS_ALLOW_HEADERS = (
+    'XMLHttpRequest',
+    # 'X_FILENAME',
+    # 'accept-encoding',
+    # 'authorization',
+    # 'content-type',
+    # 'dnt',
+    # 'origin',
+    # 'user-agent',
+    # 'x-csrftoken',
+    'x-requested-with',
+    # 'Pragma',
+)
+
 
 ROOT_URLCONF = 'cornerstone.urls'
 

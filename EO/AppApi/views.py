@@ -8,9 +8,9 @@ def cors_response(result_list):
     """解决CORS的访问验证问题"""
     response = HttpResponse(json.dumps(result_list, ensure_ascii=False), content_type="application/json,charset=utf-8")
     # response["Access-Control-Allow-Origin"] = "http://127.0.0.1:8848"
-    response["Access-Control-Allow-Origin"] = "*"
+    # response["Access-Control-Allow-Origin"] = "*"
     # response['Access-Control-Allow-Headers'] = 'x-requested-with'
-    response['Access-Control-Allow-Headers'] = "*"
+    # response['Access-Control-Allow-Headers'] = "*"
     return response
 
 
