@@ -24,6 +24,32 @@ def check_app(request):
         return False
 
 
+def login_check(request):
+    """登录检测"""
+    if check_app(request):
+        user_id = request.GET.get('user_id', 0)
+        try:
+            user = User.objects.get(user_id=user_id)
+            if request.GET.get('user_password', 0) == user.user_password:
+                result = {
+                    'code': 0,
+                    'message': '登录成功',
+                }
+            else:
+                result = {
+                    'code': 1,
+                    'message': '用户名或密码错误',
+                }
+        except User.DoesNotExist:
+            result = {
+                'code': 1,
+                'message': '您输入的账号不存在'
+            }
+        return cors_response(result)
+    else:
+        return cors_response({'error': 'BadRequest'})
+
+
 def get_note_group(request):
     """返回所有的笔记分组的名称和数量"""
     if check_app(request):

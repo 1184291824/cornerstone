@@ -6,6 +6,7 @@ from EO.AppApi import views
 app_name = "Api"
 
 urlpatterns = [
+    path('login/', views.login_check),
     path('note/group/', views.get_note_group),
     path('note/show/', views.note_show),
     path('note/detail/', views.note_detail),
