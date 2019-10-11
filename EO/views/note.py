@@ -1,4 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
+from django.http import FileResponse
+from django.utils.http import urlquote
 from EO.models import NoteGroup, Note, NoteRecode, User
 import json
 import markdown
@@ -158,5 +160,18 @@ def change_note(request):
                 'title': '修改笔记',
                 'form': form,
             })
+    else:
+        return redirect('EO:index')
+
+
+def note_download(request):
+    """下载笔记"""
+    if request.session.get('login_status', 0):
+        note = Note.objects.get(id=request.GET.get('id', 1))
+        file = note.file
+        response = FileResponse(file)
+        response['Content-Type'] = 'application/octet-stream'
+        response['Content-Disposition'] = 'attachment;filename="%s"' % (urlquote(note.name)+'.md')
+        return response
     else:
         return redirect('EO:index')
