@@ -40,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/EO/AppApi/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="498">
-              <caret line="150" column="31" selection-start-line="150" selection-start-column="31" selection-end-line="150" selection-end-column="31" />
+              <caret line="150" column="32" lean-forward="true" selection-start-line="150" selection-start-column="32" selection-end-line="150" selection-end-column="32" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -323,12 +323,12 @@
       <workItem from="1570811622602" duration="247000" />
       <workItem from="1570814089823" duration="2072000" />
       <workItem from="1570850615325" duration="2185000" />
-      <workItem from="1570867206882" duration="2398000" />
+      <workItem from="1570867206882" duration="3081000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94577000" />
+    <option name="totallyTimeSpent" value="95260000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
@@ -676,7 +676,7 @@
     <entry file="file://$PROJECT_DIR$/EO/AppApi/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="498">
-          <caret line="150" column="31" selection-start-line="150" selection-start-column="31" selection-end-line="150" selection-end-column="31" />
+          <caret line="150" column="32" lean-forward="true" selection-start-line="150" selection-start-column="32" selection-end-line="150" selection-end-column="32" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
