@@ -148,4 +148,4 @@ def note_detail(request):
 def update_get_version(request):
     """获取最新版本号"""
     if check_app(request):
-        return HttpResponse('1.3.1')
+        return HttpResponse('1.3.2')
