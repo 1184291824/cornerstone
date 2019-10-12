@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f1f55bd-7dd9-4d2b-b66e-81b2dff3b78f" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/EO/AppApi/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/AppApi/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/App/H533C5063.wgt" beforeDir="false" afterPath="$PROJECT_DIR$/static/App/H533C5063.wgt" afterDir="false" />
-    </list>
+    <list default="true" id="6f1f55bd-7dd9-4d2b-b66e-81b2dff3b78f" name="默认更改列表" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EO/AppApi/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="150" column="36" lean-forward="true" selection-start-line="150" selection-start-column="36" selection-end-line="150" selection-end-column="36" />
+            <state relative-caret-position="474">
+              <caret line="149" column="26" lean-forward="true" selection-start-line="149" selection-start-column="26" selection-end-line="149" selection-end-column="26" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -324,12 +321,12 @@
       <workItem from="1570811622602" duration="247000" />
       <workItem from="1570814089823" duration="2072000" />
       <workItem from="1570850615325" duration="2185000" />
-      <workItem from="1570867206882" duration="5580000" />
+      <workItem from="1570867206882" duration="5840000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97759000" />
+    <option name="totallyTimeSpent" value="98019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -676,8 +673,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EO/AppApi/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="150" column="36" lean-forward="true" selection-start-line="150" selection-start-column="36" selection-end-line="150" selection-end-column="36" />
+        <state relative-caret-position="474">
+          <caret line="149" column="26" lean-forward="true" selection-start-line="149" selection-start-column="26" selection-end-line="149" selection-end-column="26" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
