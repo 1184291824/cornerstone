@@ -50,6 +50,29 @@ def login_check(request):
         return cors_response({'error': 'BadRequest'})
 
 
+def register(request):
+    """注册"""
+    if check_app(request):
+        user_id = request.GET.get('user_id')
+        user_password = request.GET.get('user_password')
+        user_name = request.GET.get('user_name')
+        if user_id and user_password and user_name:
+            if User.objects.filter(user_id__exact=user_id):
+                result = {
+                    'code': 1,
+                    'message': '您输入的账号已存在，请重新输入'
+                }
+            else:
+                user = User.objects.create(user_id=user_id, user_password=user_password, user_name=user_name)
+                user.save()
+                result = {
+                    'code': 0,
+                    'message': '注册成功',
+                }
+            return cors_response(result)
+    return cors_response({'error': 'BadRequest'})
+
+
 def get_note_group(request):
     """返回所有的笔记分组的名称和数量"""
     if check_app(request):
