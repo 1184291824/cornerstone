@@ -1,5 +1,6 @@
 from django.shortcuts import HttpResponse
 # from django.http import FileResponse
+from django.http import JsonResponse
 from EO.models import NoteGroup, Note, NoteRecode, User
 import json
 import markdown
@@ -147,5 +148,11 @@ def note_detail(request):
 
 def update_get_version(request):
     """获取最新版本号"""
-    if check_app(request):
-        return HttpResponse('1.4.1')
+    # if check_app(request):
+    result = {
+        "versionCode": "192",
+        "url": "http://dgxg.njust.edu.cn/_upload/article/files/95/3d/1a5ba8af48f784d78c4e360cd3fa/fff9fb01-0ad6-46c5-aa3c-5a9142b6210b.zip",
+        "text": "1. 修改了研究生教务处的页面bug\n2. 增加了每日论语功能",
+    }
+    return HttpResponse(json.dumps(result, ensure_ascii=False), content_type="application/json,charset=utf-8")
+    # return JsonResponse(result)

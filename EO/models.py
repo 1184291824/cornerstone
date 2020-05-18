@@ -73,3 +73,15 @@ class NoteRecode(models.Model):
         db_table = 'NoteRecode'
         ordering = ['id']  # 以id为标准升序
         verbose_name_plural = '笔记修改记录'
+
+
+class BulletChat(models.Model):
+    """520的弹幕"""
+    name = models.CharField(max_length=20, verbose_name='昵称')
+    contain = models.CharField(max_length=100, verbose_name='内容')
+    verify = models.BooleanField(verbose_name='是否通过', default=True)
+
+    class Meta:
+        db_table = 'BulletChat'
+        ordering = ['id']
+        verbose_name_plural = '520弹幕'

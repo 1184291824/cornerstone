@@ -1,0 +1,992 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>520在线点灯</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<style>
+    body {
+        text-align: center;
+        /* margin: 50px auto; */
+        margin: 0;
+        background-color: #6252b5;
+    }
+
+    .light {
+        display: inline-block;
+        width: 50px;
+        height: 30px;
+        background-color: #3b3b3b;
+    }
+
+    .lou {
+        display: inline-block;
+        margin: 20px 20px;
+    }
+
+    .lou-title {
+        color: #3b3b3b;
+        font-size: 1.5em;
+        padding-bottom: 10px;
+    }
+
+    button, p {
+        display: block;
+        border: #aa55ff solid 2px;
+        border-radius: 20px;
+        height: 40px;
+        width: 300px;
+        margin: 0 auto;
+        background-color: unset;
+        color: #aa55ff;
+        font-size: 1.2em;
+        max-width: 90%;
+    }
+
+    p {
+        height: unset;
+        line-height: 2em;
+        margin-top: 20px;
+        border-radius: 25px;
+    }
+
+    button:hover {
+        background-color: #aa55ff;
+        color: white;
+    }
+
+    button:focus {
+        outline: 0;
+    }
+
+    .picture {
+        height: 520px;
+        width: 100%;
+        background-image: url(https://img-blog.csdnimg.cn/20200517145735113.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding-top: 30px;
+    }
+
+    .title {
+        color: white;
+        border: white solid 2px;
+        font-size: 3em;
+        width: 80%;
+        min-height: 2em;
+        line-height: 2em;
+        margin: 0 auto;
+        margin-top: 30px;
+        background-color: #ffffff40;
+    }
+
+    .contain {
+        font-size: 1em;
+    }
+
+    .lou-group {
+        /* border: white solid 2px; */
+        border-radius: 10px;
+        width: 96%;
+        margin: 10px auto;
+        padding: 10px 0;
+        padding-bottom: 20px;
+        background-color: white;
+    }
+
+    #music {
+        margin: 20px auto;
+    }
+
+    .waiting {
+        position: fixed;
+        width: 150px;
+        height: 50px;
+        background-color: #6252b5;
+        color: white;
+        bottom: 30%;
+        left: calc(50% - 75px);
+        line-height: 50px;
+        border-radius: 15px;
+        display: none;
+    }
+
+    .bullet {
+        position: fixed;
+    {#right: -20vw;#}{#left: 100vw;#} top: 30px;
+        background-color: #ffffff85;
+        padding: 2px 15px;
+        border-radius: 15px;
+        color: #6252b5;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    input {
+        border-radius: 11px;
+        background-color: white;
+        font-size: 1.2em;
+        height: 35px;
+        line-height: 35px;
+        width: 62%;
+        border: solid lightgray 2px;
+        margin: 10px auto;
+        text-indent: 1em;
+    }
+
+    label {
+        width: 4em;
+        text-align: right;
+        font-size: 1.2em;
+        height: 35px;
+        line-height: 35px;
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .lou {
+            margin: 20px 0;
+        }
+
+        .title {
+            font-size: 2em;
+            width: 90%;
+            margin-top: 20px;
+        }
+
+        .contain {
+            font-size: 1em;
+        }
+
+        .picture {
+            padding-top: 0;
+            height: 450px;
+        }
+    }
+
+    @media screen and (max-width: 350px) {
+        .light {
+            width: 14vw;
+        }
+    }
+</style>
+<body>
+<div class="picture">
+    <div class="title">
+        自定义你的520
+    </div>
+    <div class="title contain">
+        今年的520，你希望会亮起什么样的灯呢<br>
+        又希望和谁一起看呢<br>
+        2016级的小伙伴们<br>
+        来一场独属于我们的520点灯吧~<br>
+        <strong>提示：</strong><br>
+        点击下面的宿舍楼窗户，可以点亮一盏灯<br>
+        设计完成之后，点击确定即可生成图片哟
+    </div>
+    <div id="music">
+        <iframe id="163music" frameborder="no" border="0" marginwidth="0" marginheight="0" width="80%" height="100"
+                src="//music.163.com/outchain/player?type=2&id=1371939273&height=60&auto=1" loop="true"></iframe>
+    </div>
+</div>
+<div class="lou-group">
+    <div class="lou">
+        <div class="lou-title">
+            左侧宿舍楼
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+    </div>
+    <div class="lou">
+        <div class="lou-title">
+            中间宿舍楼
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+    </div>
+    <div class="lou">
+        <div class="lou-title">
+            右侧宿舍楼
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+        <div class="layer">
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+            <div class="light" flag="dark" onclick=""></div>
+        </div>
+    </div>
+    <button id="go" onclick="">确定</button>
+</div>
+
+<div class="lou-group">
+    <img id="canvasImg" width="90%" src="" alt="520picture"/>
+    <canvas id="canvas" width="1280" height="853" style="display: none"></canvas>
+    <canvas id="canvas2" width="1280" height="853" style="display: none"></canvas>
+    <p>长按图片可以保存哦</p>
+</div>
+<div class="lou-group">
+    <form method="post" action="{% url 'APPApi:520bullet' %}">
+        {% csrf_token %}
+        <label for="name">昵称</label>
+        <input id="name" name="name" maxlength="20" placeholder="隐晦但独特">
+        <br>
+        <label for="contain">我想说</label>
+        <input id="contain" name="contain" maxlength="100" placeholder="写一些想说的话吧">
+        <button id="bullet-button" type="submit">提交</button>
+    </form>
+</div>
+
+<div class="waiting">
+    正在形成图片
+</div>
+
+<div class="bullet" id="bullet-sample">
+
+</div>
+
+</body>
+<script>
+    {#function lightclick(e) {#}
+    {#    let _self = $(e);#}
+    {#    if (_self.attr('flag') === 'dark') {#}
+    {#        _self.css('background-color', 'lightgray');#}
+    {#        _self.attr('flag', 'light');#}
+    {#    } else {#}
+    {#        _self.css('background-color', '#3b3b3b');#}
+    {#        _self.attr('flag', 'dark');#}
+    {#    }#}
+    {# }#}
+    {##}
+    {#// 给提交按钮添加点击事件#}
+    {#function goclick () {#}
+    {#    $('.waiting').show();#}
+    {#    $(".light").each(function () {#}
+    {#        let _self = $(this);#}
+    {#        if (_self.attr('flag') === 'light') {#}
+    {#            result.push(1)#}
+    {#        } else {#}
+    {#            result.push(0)#}
+    {#        }#}
+    {#    })#}
+    {#    console.log(result);#}
+    {##}
+    {#    if (device === 'other') {#}
+    {#        makepictuer();#}
+    {#    } else {#}
+    {#        makepictuerLocal();#}
+    {#    }#}
+    {# }#}
+
+    $(document).ready(function () {
+
+        // 判断是否为苹果设备
+        {#var device;#}
+        {#if (/iPhone|iPad|iPod|iOS/i.test(navigator.userAgent)) {#}
+        {#    alert('检测到您正在使用苹果设备，因safari的兼容性原因，本网站在苹果设备上的体验极差')#}
+        {#    device = 'safari';#}
+        {# } else {#}
+        {#alert('other');#}
+        {#    device = 'other';#}
+        {# }#}
+
+        // 给每一盏灯添加点击事件
+        $('.light').click(function () {
+            var _self = $(this);
+            if (_self.attr('flag') === 'dark') {
+                _self.css('background-color', 'lightgray');
+                _self.attr('flag', 'light');
+            } else {
+                _self.css('background-color', '#3b3b3b');
+                _self.attr('flag', 'dark');
+            }
+        })
+        // 结果数组
+        // result = []
+
+        // 初始化一个图片
+        result = [0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        {#if (device === 'other') {#}
+        $('.waiting').show();
+        makepictuer();
+        {# } else {#}
+        {#    $('.waiting').show();#}
+        {#    makepictuerLocal();#}
+        {# }#}
+
+
+        // 给提交按钮添加点击事件
+        $("#go").click(function () {
+            $('.waiting').show();
+            $(".light").each(function () {
+                var _self = $(this);
+                if (_self.attr('flag') === 'light') {
+                    result.push(1)
+                } else {
+                    result.push(0)
+                }
+            })
+            console.log(result);
+
+            {#if (device === 'other') {#}
+            makepictuer();
+            {# } else {#}
+            {#    makepictuerLocal();#}
+            {# }#}
+        });
+
+        {#// 判断是否为手机，如果是，提示最好使用电脑#}
+        {#if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {#}
+        {#    alert('在手机上效果较差，建议在电脑上查看。\n不过想在手机上查看也没有关系，点击确定即可');#}
+        {# }#}
+
+        // 加入弹幕功能
+        var bulletGroup = [
+            {% for bullet_item in bullet %}
+                '{{ bullet_item.name }}：{{ bullet_item.contain }}',
+            {% endfor %}
+        ];
+
+        var top = 0;
+        var time = 1000;
+
+        for (var b in bulletGroup) {
+            top = (top + 30) % 150;
+            var sample = $('#bullet-sample').clone();
+            sample.text(bulletGroup[b]);
+            {#console.log(b);#}
+            $('body').append(sample);
+            sample.css({
+                'right': -sample.outerWidth(),
+                'top': top + 'px',
+            })
+
+            //添加动画
+            sample.delay(time).animate({
+                right: '100vw'
+            }, 5000, 'linear')
+
+            time += 500;
+        }
+
+        {#// 给弹幕提交按钮添加点击事件#}
+        {#$('#bullet-button').click(function () {#}
+        {#    if ($('#name').val() == "") {#}
+        {#        alert('昵称不能为空');#}
+        {#    } else if ($('#contain').val() == "") {#}
+        {#        alert('内容不能为空');#}
+        {#    } else {#}
+        {#        $.ajax({#}
+        {#            url: "{% url 'APPApi:520bullet' %}",#}
+        {#            type: 'POST',#}
+        {#            data: {#}
+        {#                name: $('#name').val(),#}
+        {#                contain: $('#contain').val(),#}
+        {##}
+        {#            },#}
+        {#            beforeSend: function () {#}
+        {#                $('#bullet-button').attr('disable', 'disable');#}
+        {#            },#}
+        {#            success: function () {#}
+        {#                alert('提交成功');#}
+        {#                location.reload();  // 刷新页面#}
+        {#            },#}
+        {#            error: function (e) {#}
+        {#                alert(e.message)#}
+        {#            }#}
+        {#        })#}
+        {#    }#}
+        {##}
+        {# })#}
+    })
+
+    function makepictuer() {
+        var canvas = document.getElementById("canvas"); //获取Canvas画布对象
+        var context = canvas.getContext('2d'); //获取2D上下文对象，大多数Canvas API均为此对象方法
+        var canvas2 = document.getElementById("canvas2"); //获取Canvas画布对象
+        var context2 = canvas2.getContext('2d'); //获取2D上下文对象，大多数Canvas API均为此对象方法
+
+        // 使用blob解决跨域问题
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', "https://cdn.img.wenhairu.com/images/2020/05/17/Yc3EN.jpg", true);
+        xhr.responseType = 'blob';
+        xhr.onload = function () {
+            if (parseInt(this.status, 10) === 200) {
+                var image = new Image(); //定义一个图片对象
+                image.src = URL.createObjectURL(this.response);
+                image.onload = function () { //此处必须注意！后面所有操作均需在图片加载成功后执行，否则图片将处理无效
+                    context.drawImage(image, 0, 0); //将图片从Canvas画布的左上角(0,0)位置开始绘制，大小默认为图片实际大小
+                    var imgData = context.getImageData(0, 0, canvas.width, canvas.height); //获取图片数据对象
+                    var data = imgData.data; //获取图片数据数组，该数组中每个像素用4个元素来保存，分别表示红、绿、蓝和透明度值
+                    //console.log(data)
+                    var lightData = [];
+
+                    const xhr2 = new XMLHttpRequest();
+                    xhr2.open('GET', "https://cdn.img.wenhairu.com/images/2020/05/17/YcshR.jpg", true);
+                    xhr2.responseType = 'blob';
+                    xhr2.onload = function () {
+                        if (parseInt(this.status, 10) === 200) {
+                            var image2 = new Image(); //定义一个图片对象
+                            image2.src = URL.createObjectURL(this.response);
+                            // image2.src = 'https://cdn.img.wenhairu.com/images/2020/05/17/YcshR.jpg'
+
+                            image2.onload = function () {
+                                context2.drawImage(image2, 0, 0); //将图片从Canvas画布的左上角(0,0)位置开始绘制，大小默认为图片实际大小
+                                var imgData2 = context2.getImageData(0, 0, canvas2.width, canvas2.height); //获取图片数据对象
+                                var data2 = imgData2.data; //获取图片数据数组，该数组中每个像素用4个元素来保存，分别表示红、绿、蓝和透明度值
+                                //console.log(data)
+                                // 获取灯的数据
+                                for (var j = 275; j <= 294; j += 1) {
+                                    for (var i = (144 + j * 1280) * 4; i <= (163 + j * 1280) * 4; i +=
+                                        4) {
+                                        lightData.push(data2[i]);
+                                        lightData.push(data2[i + 1]);
+                                        lightData.push(data2[i + 2]);
+                                        lightData.push(data2[i + 3]);
+                                    }
+                                }
+
+                                // 根据result写入图片数据
+                                for (var a = 0; a < 180; a++) {
+                                    if (a < 60) {
+                                        if (result[a] === 1) {
+                                            var x = a % 6;
+                                            var y = Math.floor(a / 6);
+                                            var lightIndex = 0;
+                                            for (var j = 216 + y * 19; j <= 216 + (y + 1) * 19; j +=
+                                                1) {
+                                                for (var i = (144 + x * 19 + j * 1280) * 4; i <= (
+                                                    144 +
+                                                    (x + 1) * 19 + j * 1280) * 4; i += 4) {
+                                                    data[i] = lightData[lightIndex];
+                                                    data[i + 1] = lightData[lightIndex + 1];
+                                                    data[i + 2] = lightData[lightIndex + 2];
+                                                    data[i + 3] = lightData[lightIndex + 3];
+                                                    lightIndex += 4;
+                                                }
+                                            }
+                                        }
+                                    } else if (60 <= a && a < 120) {
+                                        if (result[a] === 1) {
+                                            var x = (a - 60) % 6;
+                                            var y = Math.floor((a - 60) / 6);
+                                            var lightIndex = 0;
+                                            for (var j = 208 + y * 21; j <= 208 + y * 21 + 19; j +=
+                                                1) {
+                                                for (var i = (528 + x * 21 + j * 1280) * 4; i <= (
+                                                    528 +
+                                                    x * 21 + 19 + j * 1280) * 4; i += 4) {
+                                                    data[i] = lightData[lightIndex];
+                                                    data[i + 1] = lightData[lightIndex + 1];
+                                                    data[i + 2] = lightData[lightIndex + 2];
+                                                    data[i + 3] = lightData[lightIndex + 3];
+                                                    lightIndex += 4;
+                                                }
+                                            }
+                                        }
+                                    } else {
+                                        if (result[a] === 1) {
+                                            var x = (a - 120) % 6;
+                                            var y = Math.floor((a - 120) / 6);
+                                            var lightIndex = 0;
+                                            for (var j = 200 + y * 23; j <= 200 + y * 23 + 19; j +=
+                                                1) {
+                                                for (var i = (976 + x * 26 + j * 1280) * 4; i <= (
+                                                    976 +
+                                                    x * 26 + 19 + j * 1280) * 4; i += 4) {
+                                                    data[i] = lightData[lightIndex];
+                                                    data[i + 1] = lightData[lightIndex + 1];
+                                                    data[i + 2] = lightData[lightIndex + 2];
+                                                    data[i + 3] = lightData[lightIndex + 3];
+                                                    lightIndex += 4;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                //let average = 0;
+                                //for (let i = 0; i < data.length; i += 4) {
+                                //    average = Math.floor((data[i] + data[i + 1] + data[i + 2]) / 3); //将红、绿、蓝色值求平均值后得到灰度值
+                                //    data[i] = data[i + 1] = data[i + 2] = average;
+                                //    // 将每个像素点的色值重写
+                                //}
+                                imgData.data = data;
+                                context.putImageData(imgData, 0, 0); //将处理后的图像数据重写至Canvas画布，此时画布中图像变为黑白色
+                                result = [];
+                                setTimeout(function () {
+                                    $('.waiting').hide()
+                                }, 500);
+                                var url = canvas.toDataURL("image/png");
+                                $('#canvasImg').attr('src', url);
+
+                            }
+                        }
+
+                    }
+                    xhr2.send();
+                };
+            }
+        };
+        xhr.send();
+
+
+        {#let image = new Image(); //定义一个图片对象#}
+        {#image.setAttribute('crossOrigin', 'anonymous');#}
+        {#// image.src = '{% static "App/520.jpg" %}';#}
+        {#// image.src = 'https://upload-images.jianshu.io/upload_images/14968090-d645d7b5fcb0e15c.jpg';#}
+        {#image.src = 'https://cdn.img.wenhairu.com/images/2020/05/17/Yc3EN.jpg';#}
+        {##}
+        {#image.onload = function () { //此处必须注意！后面所有操作均需在图片加载成功后执行，否则图片将处理无效#}
+        {#    context.drawImage(image, 0, 0); //将图片从Canvas画布的左上角(0,0)位置开始绘制，大小默认为图片实际大小#}
+        {#    let imgData = context.getImageData(0, 0, canvas.width, canvas.height); //获取图片数据对象#}
+        {#    let data = imgData.data; //获取图片数据数组，该数组中每个像素用4个元素来保存，分别表示红、绿、蓝和透明度值#}
+        {#    //console.log(data)#}
+        {#    let lightData = [];#}
+        {##}
+        {#    let image2 = new Image(); //定义一个图片对象#}
+        {#    image2.setAttribute('crossOrigin', 'anonymous');#}
+        {#    // image2.src = '{% static "App/5202.jpg" %}';#}
+        {#    image2.src = 'https://cdn.img.wenhairu.com/images/2020/05/17/YcshR.jpg'#}
+        {##}
+        {#    image2.onload = function () {#}
+        {#        context2.drawImage(image2, 0, 0); //将图片从Canvas画布的左上角(0,0)位置开始绘制，大小默认为图片实际大小#}
+        {#        let imgData2 = context2.getImageData(0, 0, canvas2.width, canvas2.height); //获取图片数据对象#}
+        {#        let data2 = imgData2.data; //获取图片数据数组，该数组中每个像素用4个元素来保存，分别表示红、绿、蓝和透明度值#}
+        {#        //console.log(data)#}
+        {#        // 获取灯的数据#}
+        {#        for (let j = 275; j <= 294; j += 1) {#}
+        {#            for (let i = (144 + j * 1280) * 4; i <= (163 + j * 1280) * 4; i +=#}
+        {#                4) {#}
+        {#                lightData.push(data2[i]);#}
+        {#                lightData.push(data2[i + 1]);#}
+        {#                lightData.push(data2[i + 2]);#}
+        {#                lightData.push(data2[i + 3]);#}
+        {#            }#}
+        {#        }#}
+        {##}
+        {#        // 根据result写入图片数据#}
+        {#        for (let a = 0; a < 180; a++) {#}
+        {#            if (a < 60) {#}
+        {#                if (result[a] === 1) {#}
+        {#                    let x = a % 6;#}
+        {#                    let y = Math.floor(a / 6);#}
+        {#                    let lightIndex = 0;#}
+        {#                    for (let j = 216 + y * 19; j <= 216 + (y + 1) * 19; j +=#}
+        {#                        1) {#}
+        {#                        for (let i = (144 + x * 19 + j * 1280) * 4; i <= (#}
+        {#                            144 +#}
+        {#                            (x + 1) * 19 + j * 1280) * 4; i += 4) {#}
+        {#                            data[i] = lightData[lightIndex];#}
+        {#                            data[i + 1] = lightData[lightIndex + 1];#}
+        {#                            data[i + 2] = lightData[lightIndex + 2];#}
+        {#                            data[i + 3] = lightData[lightIndex + 3];#}
+        {#                            lightIndex += 4;#}
+        {#                        }#}
+        {#                    }#}
+        {#                }#}
+        {#            } else if (60 <= a && a < 120) {#}
+        {#                if (result[a] === 1) {#}
+        {#                    let x = (a - 60) % 6;#}
+        {#                    let y = Math.floor((a - 60) / 6);#}
+        {#                    let lightIndex = 0;#}
+        {#                    for (let j = 208 + y * 21; j <= 208 + y * 21 + 19; j +=#}
+        {#                        1) {#}
+        {#                        for (let i = (528 + x * 21 + j * 1280) * 4; i <= (#}
+        {#                            528 +#}
+        {#                            x * 21 + 19 + j * 1280) * 4; i += 4) {#}
+        {#                            data[i] = lightData[lightIndex];#}
+        {#                            data[i + 1] = lightData[lightIndex + 1];#}
+        {#                            data[i + 2] = lightData[lightIndex + 2];#}
+        {#                            data[i + 3] = lightData[lightIndex + 3];#}
+        {#                            lightIndex += 4;#}
+        {#                        }#}
+        {#                    }#}
+        {#                }#}
+        {#            } else {#}
+        {#                if (result[a] === 1) {#}
+        {#                    let x = (a - 120) % 6;#}
+        {#                    let y = Math.floor((a - 120) / 6);#}
+        {#                    let lightIndex = 0;#}
+        {#                    for (let j = 200 + y * 23; j <= 200 + y * 23 + 19; j +=#}
+        {#                        1) {#}
+        {#                        for (let i = (976 + x * 26 + j * 1280) * 4; i <= (#}
+        {#                            976 +#}
+        {#                            x * 26 + 19 + j * 1280) * 4; i += 4) {#}
+        {#                            data[i] = lightData[lightIndex];#}
+        {#                            data[i + 1] = lightData[lightIndex + 1];#}
+        {#                            data[i + 2] = lightData[lightIndex + 2];#}
+        {#                            data[i + 3] = lightData[lightIndex + 3];#}
+        {#                            lightIndex += 4;#}
+        {#                        }#}
+        {#                    }#}
+        {#                }#}
+        {#            }#}
+        {#        }#}
+        {##}
+        {#        //let average = 0;#}
+        {#        //for (let i = 0; i < data.length; i += 4) {#}
+        {#        //    average = Math.floor((data[i] + data[i + 1] + data[i + 2]) / 3); //将红、绿、蓝色值求平均值后得到灰度值#}
+        {#        //    data[i] = data[i + 1] = data[i + 2] = average;#}
+        {#        //    // 将每个像素点的色值重写#}
+        {#        //}#}
+        {#        imgData.data = data;#}
+        {#        context.putImageData(imgData, 0, 0); //将处理后的图像数据重写至Canvas画布，此时画布中图像变为黑白色#}
+        {#        result = [];#}
+        {#        setTimeout(function () {#}
+        {#            $('.waiting').hide()#}
+        {#        }, 500);#}
+        {#        let url = canvas.toDataURL("image/png");#}
+        {#        $('#canvasImg').attr('src', url);#}
+        {##}
+        {#    }#}
+
+        {# }#}
+
+    }
+
+    {#function makepictuerLocal() {#}
+    {#    var canvas = document.getElementById("canvas"); //获取Canvas画布对象#}
+    {#    var context = canvas.getContext('2d'); //获取2D上下文对象，大多数Canvas API均为此对象方法#}
+    {#    var canvas2 = document.getElementById("canvas2"); //获取Canvas画布对象#}
+    {#    var context2 = canvas2.getContext('2d'); //获取2D上下文对象，大多数Canvas API均为此对象方法#}
+    {##}
+    {#    var image = new Image(); //定义一个图片对象#}
+    {#    image.src = '{% static "App/520.jpg" %}';#}
+    {#    image.onload = function () { //此处必须注意！后面所有操作均需在图片加载成功后执行，否则图片将处理无效#}
+    {#        context.drawImage(image, 0, 0); //将图片从Canvas画布的左上角(0,0)位置开始绘制，大小默认为图片实际大小#}
+    {#        var imgData = context.getImageData(0, 0, canvas.width, canvas.height); //获取图片数据对象#}
+    {#        var data = imgData.data; //获取图片数据数组，该数组中每个像素用4个元素来保存，分别表示红、绿、蓝和透明度值#}
+    {#        //console.log(data)#}
+    {#        var lightData = [];#}
+    {#        var image2 = new Image(); //定义一个图片对象#}
+    {#        image2.src = '{% static "App/5202.jpg" %}';#}
+    {#        // image2.src = 'https://cdn.img.wenhairu.com/images/2020/05/17/YcshR.jpg'#}
+    {##}
+    {#        image2.onload = function () {#}
+    {#            context2.drawImage(image2, 0, 0); //将图片从Canvas画布的左上角(0,0)位置开始绘制，大小默认为图片实际大小#}
+    {#            var imgData2 = context2.getImageData(0, 0, canvas2.width, canvas2.height); //获取图片数据对象#}
+    {#            var data2 = imgData2.data; //获取图片数据数组，该数组中每个像素用4个元素来保存，分别表示红、绿、蓝和透明度值#}
+    {#            //console.log(data)#}
+    {#            // 获取灯的数据#}
+    {#            for (var j = 275; j <= 294; j += 1) {#}
+    {#                for (var i = (144 + j * 1280) * 4; i <= (163 + j * 1280) * 4; i +=#}
+    {#                    4) {#}
+    {#                    lightData.push(data2[i]);#}
+    {#                    lightData.push(data2[i + 1]);#}
+    {#                    lightData.push(data2[i + 2]);#}
+    {#                    lightData.push(data2[i + 3]);#}
+    {#                }#}
+    {#            }#}
+    {##}
+    {#            // 根据result写入图片数据#}
+    {#            for (var a = 0; a < 180; a++) {#}
+    {#                if (a < 60) {#}
+    {#                    if (result[a] === 1) {#}
+    {#                        var x = a % 6;#}
+    {#                        var y = Math.floor(a / 6);#}
+    {#                        var lightIndex = 0;#}
+    {#                        for (var j = 216 + y * 19; j <= 216 + (y + 1) * 19; j +=#}
+    {#                            1) {#}
+    {#                            for (var i = (144 + x * 19 + j * 1280) * 4; i <= (#}
+    {#                                144 +#}
+    {#                                (x + 1) * 19 + j * 1280) * 4; i += 4) {#}
+    {#                                data[i] = lightData[lightIndex];#}
+    {#                                data[i + 1] = lightData[lightIndex + 1];#}
+    {#                                data[i + 2] = lightData[lightIndex + 2];#}
+    {#                                data[i + 3] = lightData[lightIndex + 3];#}
+    {#                                lightIndex += 4;#}
+    {#                            }#}
+    {#                        }#}
+    {#                    }#}
+    {#                } else if (60 <= a && a < 120) {#}
+    {#                    if (result[a] === 1) {#}
+    {#                        var x = (a - 60) % 6;#}
+    {#                        var y = Math.floor((a - 60) / 6);#}
+    {#                        var lightIndex = 0;#}
+    {#                        for (var j = 208 + y * 21; j <= 208 + y * 21 + 19; j +=#}
+    {#                            1) {#}
+    {#                            for (var i = (528 + x * 21 + j * 1280) * 4; i <= (#}
+    {#                                528 +#}
+    {#                                x * 21 + 19 + j * 1280) * 4; i += 4) {#}
+    {#                                data[i] = lightData[lightIndex];#}
+    {#                                data[i + 1] = lightData[lightIndex + 1];#}
+    {#                                data[i + 2] = lightData[lightIndex + 2];#}
+    {#                                data[i + 3] = lightData[lightIndex + 3];#}
+    {#                                lightIndex += 4;#}
+    {#                            }#}
+    {#                        }#}
+    {#                    }#}
+    {#                } else {#}
+    {#                    if (result[a] === 1) {#}
+    {#                        var x = (a - 120) % 6;#}
+    {#                        var y = Math.floor((a - 120) / 6);#}
+    {#                        var lightIndex = 0;#}
+    {#                        for (var j = 200 + y * 23; j <= 200 + y * 23 + 19; j +=#}
+    {#                            1) {#}
+    {#                            for (var i = (976 + x * 26 + j * 1280) * 4; i <= (#}
+    {#                                976 +#}
+    {#                                x * 26 + 19 + j * 1280) * 4; i += 4) {#}
+    {#                                data[i] = lightData[lightIndex];#}
+    {#                                data[i + 1] = lightData[lightIndex + 1];#}
+    {#                                data[i + 2] = lightData[lightIndex + 2];#}
+    {#                                data[i + 3] = lightData[lightIndex + 3];#}
+    {#                                lightIndex += 4;#}
+    {#                            }#}
+    {#                        }#}
+    {#                    }#}
+    {#                }#}
+    {#            }#}
+    {##}
+    {#            //let average = 0;#}
+    {#            //for (let i = 0; i < data.length; i += 4) {#}
+    {#            //    average = Math.floor((data[i] + data[i + 1] + data[i + 2]) / 3); //将红、绿、蓝色值求平均值后得到灰度值#}
+    {#            //    data[i] = data[i + 1] = data[i + 2] = average;#}
+    {#            //    // 将每个像素点的色值重写#}
+    {#            //}#}
+    {#            imgData.data = data;#}
+    {#            context.putImageData(imgData, 0, 0); //将处理后的图像数据重写至Canvas画布，此时画布中图像变为黑白色#}
+    {#            result = [];#}
+    {#            setTimeout(function () {#}
+    {#                $('.waiting').hide()#}
+    {#            }, 500);#}
+    {#            var url = canvas.toDataURL("image/png");#}
+    {#            $('#canvasImg').attr('src', url);#}
+    {#        }#}
+    {#    }#}
+    {# }#}
+</script>
+</html>

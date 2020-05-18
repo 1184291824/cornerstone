@@ -56,3 +56,15 @@ class NoteRecodeAdmin(admin.ModelAdmin):
         'note',
         'user',
     ]
+
+
+@admin.register(BulletChat)
+class BulletChatAdmin(admin.ModelAdmin):
+    list_display = [
+        'pk',
+        'name',
+        'contain',
+        'verify',
+    ]
+
+    list_filter = ['verify']
