@@ -19,12 +19,18 @@ def index(request):
     })
 
 
+def stop(request):
+    """网站停止运营公告"""
+    return render(request, "App/520stop.html")
+
+
 def bullet(request):
     if request.method == "POST":
         name = request.POST['name']
         contain = request.POST['contain']
-        BulletChat.objects.create(
-            name=name,
-            contain=contain,
-        )
+        if name and contain:
+            BulletChat.objects.create(
+                name=name,
+                contain=contain,
+            )
     return redirect('APPApi:520')

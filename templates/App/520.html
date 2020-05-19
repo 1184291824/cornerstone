@@ -80,7 +80,7 @@
         line-height: 2em;
         margin: 0 auto;
         margin-top: 30px;
-        background-color: #ffffff40;
+        background-color: rgba(255, 255, 255, 0.4);
     }
 
     .contain {
@@ -117,7 +117,7 @@
     .bullet {
         position: fixed;
     {#right: -20vw;#}{#left: 100vw;#} top: 30px;
-        background-color: #ffffff85;
+        background-color: rgba(255, 255, 255, 0.7);
         padding: 2px 15px;
         border-radius: 15px;
         color: #6252b5;
@@ -462,11 +462,11 @@
     <form method="post" action="{% url 'APPApi:520bullet' %}">
         {% csrf_token %}
         <label for="name">昵称</label>
-        <input id="name" name="name" maxlength="20" placeholder="隐晦但独特">
+        <input id="name" name="name" maxlength="20" placeholder="隐晦但独特" required>
         <br>
         <label for="contain">我想说</label>
-        <input id="contain" name="contain" maxlength="100" placeholder="写一些想说的话吧">
-        <button id="bullet-button" type="submit">提交</button>
+        <input id="contain" name="contain" maxlength="100" placeholder="写一些想说的话吧" required>
+        <button id="bullet-button" type="submit">发送弹幕</button>
     </form>
 </div>
 
@@ -474,7 +474,7 @@
     正在形成图片
 </div>
 
-<div class="bullet" id="bullet-sample">
+<div class="bullet" id="bullet-sample" style="display: none">
 
 </div>
 
@@ -574,63 +574,44 @@
         {# }#}
 
         // 加入弹幕功能
-        var bulletGroup = [
-            {% for bullet_item in bullet %}
-                '{{ bullet_item.name }}：{{ bullet_item.contain }}',
-            {% endfor %}
-        ];
+        setTimeout(function () {
+            var bulletGroup = [
+                {% for bullet_item in bullet %}
+                    '{{ bullet_item.name }}：{{ bullet_item.contain }}',
+                {% endfor %}
+            ];
 
-        var top = 0;
-        var time = 1000;
+            var top = 0;
+            var time = 1000;
+            var move_time = window.screen.width*10+1000;
 
-        for (var b in bulletGroup) {
-            top = (top + 30) % 150;
-            var sample = $('#bullet-sample').clone();
-            sample.text(bulletGroup[b]);
-            {#console.log(b);#}
-            $('body').append(sample);
-            sample.css({
-                'right': -sample.outerWidth(),
-                'top': top + 'px',
-            })
+            for (var b in bulletGroup) {
+                top = (top + 30) % 150;
+                var sample = $('#bullet-sample').clone();
+                sample.removeAttr('id style');
+                sample.text(bulletGroup[b]);
+                {#console.log(b);#}
+                $('body').append(sample);
+                sample.css({
+                    'right': -sample.outerWidth(),
+                    'top': top + 'px',
+                })
 
-            //添加动画
-            sample.delay(time).animate({
-                right: '100vw'
-            }, 5000, 'linear')
+                //添加动画
+                sample.delay(time).animate({
+                    right: '100vw'
+                }, move_time, 'linear')
 
-            time += 500;
+                time += 500;
+            }
+
+
+        }, 5000)
+
+        document.querySelector('form').onsubmit = function () {
+            $('#bullet-button').attr('disable', 'disable');
         }
 
-        {#// 给弹幕提交按钮添加点击事件#}
-        {#$('#bullet-button').click(function () {#}
-        {#    if ($('#name').val() == "") {#}
-        {#        alert('昵称不能为空');#}
-        {#    } else if ($('#contain').val() == "") {#}
-        {#        alert('内容不能为空');#}
-        {#    } else {#}
-        {#        $.ajax({#}
-        {#            url: "{% url 'APPApi:520bullet' %}",#}
-        {#            type: 'POST',#}
-        {#            data: {#}
-        {#                name: $('#name').val(),#}
-        {#                contain: $('#contain').val(),#}
-        {##}
-        {#            },#}
-        {#            beforeSend: function () {#}
-        {#                $('#bullet-button').attr('disable', 'disable');#}
-        {#            },#}
-        {#            success: function () {#}
-        {#                alert('提交成功');#}
-        {#                location.reload();  // 刷新页面#}
-        {#            },#}
-        {#            error: function (e) {#}
-        {#                alert(e.message)#}
-        {#            }#}
-        {#        })#}
-        {#    }#}
-        {##}
-        {# })#}
     })
 
     function makepictuer() {

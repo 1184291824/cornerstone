@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6f1f55bd-7dd9-4d2b-b66e-81b2dff3b78f" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EO/AppApi/Light.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/AppApi/Light.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EO/AppApi/apiUrls.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/AppApi/apiUrls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EO/AppApi/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/AppApi/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EO/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EO/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cornerstone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cornerstone/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/App/520.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App/520.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,22 +38,23 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/App" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\cornerstone\templates\App" />
+      <recent name="D:\project\cornerstone\App" />
+      <recent name="D:\project\cornerstone\templates\PC" />
+      <recent name="D:\project\cornerstone\templates" />
+      <recent name="D:\project\cornerstone\EO\static" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\project\cornerstone\static" />
       <recent name="D:\project\cornerstone\templates\PC" />
       <recent name="D:\project\cornerstone" />
       <recent name="D:\project\cornerstone\EO\views" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\project\cornerstone\App" />
-      <recent name="D:\project\cornerstone\templates\PC" />
-      <recent name="D:\project\cornerstone\templates" />
-      <recent name="D:\project\cornerstone\EO\static" />
     </key>
   </component>
   <component name="RunManager" selected="Django Server.cornerstone">
@@ -136,7 +135,9 @@
       <workItem from="1589614106403" duration="10362000" />
       <workItem from="1589697490170" duration="8123000" />
       <workItem from="1589717594168" duration="1313000" />
-      <workItem from="1589760950167" duration="16141000" />
+      <workItem from="1589760950167" duration="19236000" />
+      <workItem from="1589803874107" duration="1017000" />
+      <workItem from="1589849522584" duration="313000" />
     </task>
     <servers />
   </component>

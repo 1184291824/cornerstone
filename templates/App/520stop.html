@@ -1,0 +1,202 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>520在线点灯</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<style>
+    body {
+        text-align: center;
+        /* margin: 50px auto; */
+        margin: 0;
+        background-color: #6252b5;
+    }
+
+    .light {
+        display: inline-block;
+        width: 50px;
+        height: 30px;
+        background-color: #3b3b3b;
+    }
+
+    .lou {
+        display: inline-block;
+        margin: 20px 20px;
+    }
+
+    .lou-title {
+        color: #3b3b3b;
+        font-size: 1.5em;
+        padding-bottom: 10px;
+    }
+
+    button, p {
+        display: block;
+        border: #aa55ff solid 2px;
+        border-radius: 20px;
+        height: 40px;
+        width: 300px;
+        margin: 0 auto;
+        background-color: unset;
+        color: #aa55ff;
+        font-size: 1.2em;
+        max-width: 90%;
+    }
+
+    p {
+        height: unset;
+        line-height: 2em;
+        margin-top: 20px;
+        border-radius: 25px;
+    }
+
+    button:hover {
+        background-color: #aa55ff;
+        color: white;
+    }
+
+    button:focus {
+        outline: 0;
+    }
+
+    .picture {
+        height: 520px;
+        width: 100%;
+        background-image: url(https://img-blog.csdnimg.cn/20200517145735113.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding-top: 30px;
+    }
+
+    .title {
+        color: white;
+        border: white solid 2px;
+        font-size: 3em;
+        width: 80%;
+        min-height: 2em;
+        line-height: 2em;
+        margin: 0 auto;
+        margin-top: 30px;
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .contain {
+        font-size: 1em;
+    }
+
+    .lou-group {
+        /* border: white solid 2px; */
+        border-radius: 10px;
+        width: 96%;
+        margin: 10px auto;
+        padding: 10px 0;
+        padding-bottom: 20px;
+        background-color: white;
+    }
+
+    #music {
+        margin: 20px auto;
+    }
+
+    .waiting {
+        position: fixed;
+        width: 150px;
+        height: 50px;
+        background-color: #6252b5;
+        color: white;
+        bottom: 30%;
+        left: calc(50% - 75px);
+        line-height: 50px;
+        border-radius: 15px;
+        display: none;
+    }
+
+    .bullet {
+        position: fixed;
+    {#right: -20vw;#}{#left: 100vw;#} top: 30px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 2px 15px;
+        border-radius: 15px;
+        color: #6252b5;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    input {
+        border-radius: 11px;
+        background-color: white;
+        font-size: 1.2em;
+        height: 35px;
+        line-height: 35px;
+        width: 62%;
+        border: solid lightgray 2px;
+        margin: 10px auto;
+        text-indent: 1em;
+    }
+
+    label {
+        width: 4em;
+        text-align: right;
+        font-size: 1.2em;
+        height: 35px;
+        line-height: 35px;
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .lou {
+            margin: 20px 0;
+        }
+
+        .title {
+            font-size: 2em;
+            width: 90%;
+            margin-top: 20px;
+        }
+
+        .contain {
+            font-size: 1em;
+        }
+
+        .picture {
+            padding-top: 0;
+            height: 450px;
+        }
+    }
+
+    @media screen and (max-width: 350px) {
+        .light {
+            width: 14vw;
+        }
+    }
+</style>
+<body>
+<div class="picture">
+    <div class="title">
+        网站已停止运营
+    </div>
+    <div class="title contain">
+        应相关网络管理部门要求<br>
+        本网站已经停止运营<br>
+        祝大家520快乐<br>
+        希望在本网站短暂的一生中<br>
+        带给了你一点点回忆和快乐<br>
+        再见~
+    </div>
+    <div class="title contain">
+        如果你希望学习网站原理<br>
+        或者想继续制作更多的图片<br>
+        源码奉上：<a href="https://github.com/1184291824/cornerstone/blob/master/templates/App/520.html" target="_blank">GitHub地址</a>
+    </div>
+    <div id="music">
+        <iframe id="163music" frameborder="no" border="0" marginwidth="0" marginheight="0" width="80%" height="100"
+                src="//music.163.com/outchain/player?type=2&id=1371939273&height=60&auto=1" loop="true"></iframe>
+    </div>
+</div>
+
+</body>
+</html>

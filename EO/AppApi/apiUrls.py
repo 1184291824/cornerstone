@@ -13,7 +13,7 @@ urlpatterns = [
     path('note/detail/', views.note_detail),
     # path('apk/', views.download),
     path('update/getVersion', views.update_get_version),
-    path('520Light/', Light.index, name='520'),
-    path('520Light/bullet', Light.bullet, name='520bullet'),
+    path('520Light/', Light.stop, name='520'),
+    # path('520Light/bullet', Light.bullet, name='520bullet'),
 
 ]
