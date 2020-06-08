@@ -85,3 +85,32 @@ class BulletChat(models.Model):
         db_table = 'BulletChat'
         ordering = ['id']
         verbose_name_plural = '520弹幕'
+
+
+class GraduationStudent(models.Model):
+    """毕业生账户"""
+    student_id = models.CharField(max_length=12, verbose_name='学号')
+    name = models.CharField(max_length=20, verbose_name='姓名')
+    card_id = models.CharField(max_length=6, verbose_name='身份证号后6位')
+    photo = models.TextField(verbose_name='图片的base64代码', default='')
+    class_num = models.CharField(max_length=12, verbose_name='班级')
+    gender = models.CharField(max_length=1, verbose_name='性别')
+    admission_time = models.CharField(max_length=6, verbose_name='入学时间')
+    dormitory = models.CharField(max_length=20, verbose_name='宿舍')
+    address = models.CharField(max_length=50, verbose_name='生源地')
+    score = models.CharField(max_length=10, verbose_name='高考总分')
+    graduation_school = models.CharField(max_length=20, verbose_name='毕业中学')
+    ksh = models.CharField(max_length=14, verbose_name='考生号')
+    byqx = models.CharField(max_length=20, verbose_name='毕业去向')
+    byqxdw = models.CharField(max_length=100, verbose_name='毕业去向单位')
+    total_score = models.CharField(max_length=10, verbose_name='总分')
+    get_credits = models.CharField(max_length=10, verbose_name='所得学分')
+    average_score = models.CharField(max_length=10, verbose_name='平均学分绩')
+    rank = models.CharField(max_length=10, verbose_name='排名')
+    discipline = models.CharField(max_length=10, verbose_name='专业')
+
+    class Meta:
+        db_table = 'GraduationStudent'
+        ordering = ['student_id']
+        verbose_name_plural = '毕业生账户'
+

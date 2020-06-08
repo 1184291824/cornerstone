@@ -1,0 +1,141 @@
+.title-pic {
+    background-image: url("https://cdn.img.wenhairu.com/images/2020/06/07/fqvFs.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    text-align: center;
+    margin: 20px auto;
+    font-size: 1.5em;
+    /*height: 80px;*/
+    width: 7em;
+    color: white;
+    padding: 0 3em;
+}
+
+.title-pic-text {
+    line-height: 3em;
+}
+
+.menu-a {
+    color: white;
+    font-size: 1.2em;
+    display: block;
+    margin: 50px auto;
+    border: solid 2px white;
+    border-radius: 25px;
+    line-height: 2em;
+    width: 70%;
+    min-width: 7em;
+    text-align: center;
+    padding: 0 2em;
+    text-decoration: none;
+}
+
+/*.title {*/
+/*    text-align: center;*/
+/*    margin: 20px auto;*/
+/*    font-size: 1.5em;*/
+/*    height: 40px;*/
+/*    color: white;*/
+/*    width: 100%;*/
+/*    !* background-color: white; *!*/
+/*}*/
+
+/*.title > .title-text {*/
+/*    position: relative;*/
+/*    line-height: 40px;*/
+/*}*/
+
+/*.title > .title-text::before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    !*width: 30%;*!*/
+/*    height: 2px;*/
+/*    top: 19px;*/
+/*    background-color: white;*/
+/*    left: 12%;*/
+/*    right: calc(50% + 3em);*/
+/*}*/
+
+/*.title > .title-text::after {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    !*width: 30%;*!*/
+/*    height: 2px;*/
+/*    top: 19px;*/
+/*    background-color: white;*/
+/*    left: calc(50% + 3em);*/
+/*    right: 12%;*/
+/*}*/
+
+.box {
+    text-align: center;
+}
+
+#graduation-photo {
+    width: 95%;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
+
+.image-box {
+    width: fit-content;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px 20px;
+    padding: 10px;
+    display: inline-block;
+    font-size: 0;
+}
+
+.image-contain {
+    height: 240px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-contain > img {
+    max-width: 200px;
+    max-height: 240px;
+}
+
+.student-account {
+    /*text-indent: 2em;*/
+    width: 98%;
+    max-width: 1000px;
+    font-size: 1.2em;
+    color: white;
+    margin: 0 auto;
+
+}
+
+.student-account>p{
+    text-indent: 2em;
+    line-height: 1.5em;
+    word-break: break-all;
+}
+
+button {
+    display: block;
+    border: none;
+    background-color: #1f8dd6;
+    width: 80%;
+    height: 40px;
+    color: white;
+    font-size: 19px;
+    border-radius: 25px;
+    margin: 10px auto 0 auto;
+}
+
+button[disabled='disabled'] {
+    background-color: gray;
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 1.2em;
+    }
+}

@@ -1,0 +1,163 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+{#    <link rel="stylesheet" href="{% static 'PC/css/form.css' %}">#}
+    <link rel="stylesheet" href="{% static 'PC/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'App/graduation/index.css' %}">
+    <script src=""{% static 'App/graduation/index.js' %}></script>
+    <title>云毕业照 | 我的大学账单</title>
+    <style>
+        .image-box{
+            width: 90%;
+            margin: 20px auto;
+            display: block;
+            height: unset;
+
+        }
+        .image-box>p{
+            font-size: 16px;
+            color: gray;
+            text-align: center;
+            margin: 1px auto;
+        }
+        span{
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+<div class="title-pic">
+    <div class="title-pic-text">记忆中的模样</div>
+</div>
+<div class="student-account">
+    <p>那是<span>{{ student.admission_time | slice:'4' }}年{{ student.admission_time | slice:'4:' }}月</span>的一天，来自<span>{{ student.address }}{{ student.graduation_school }}</span>的小{% if student.gender == '男' %}帅哥{% else %}可爱{% endif %}<span>{{ student.name }}</span>以<span>{{ student.score }}</span>的高考分数考入南京理工大学。</p>
+    <div class="image-box">
+        <img src="https://cdn.img.wenhairu.com/images/2020/06/07/fUOzs.jpg" alt="图1" title="图1" width="100%"/>
+        <p>南大门</p>
+    </div>
+    <p>褪去<span>{{ student.ksh }}</span>，换上<span>{{ student.student_id }}</span>，一个编号的替换，让你从懵懂走向青春，高中的记忆是那么可歌可泣，但即使再不舍，也要微笑着挥手道别，和过去说一声再见</p>
+    <div class="image-box">
+        <img src="https://cdn.img.wenhairu.com/images/2020/06/07/fUbNn.gif" alt="图2" title="图2" width="100%"/>
+        <p>即使再不舍，也要微笑着挥手道别</p>
+    </div>
+</div>
+<div class="title-pic">
+    <div class="title-pic-text">相遇电光16</div>
+</div>
+<div class="student-account">
+    <p><span>相遇是种来自于时光的馈赠</span>，在南理，你和电光16相遇，成为了<span>{{ student.class_num }}</span>班的一员。在四年的时光中，我们的故事太多太多</p>
+    <p>在这里，我们是流血流汗不流泪的战士，是站在大地上的神兵</p>
+    <div class="image-box">
+        <img src="https://cdn.img.wenhairu.com/images/2020/06/05/Yl8Yu.md.png" alt="图3" title="图3" width="100%"/>
+        <p>军训汇报表彰大会</p>
+    </div>
+    <p>在这里，我们遇见了既爱又恨的他们</p>
+    <div class="image-box">
+        <img src="https://iph.href.lu/200x100?text=四位第一届助理军装照&fg=666666&bg=cccccc" alt="图4" title="图4" width="100%"/>
+        <p>第一届教育班四位助理</p>
+    </div>
+    <p>在这里，我们遇见了伴我们走过四年大学生活的海玉主任</p>
+    <div class="image-box">
+        <img src="https://cdn.img.wenhairu.com/images/2020/06/07/fU26G.jpg" alt="图5" title="图5" width="100%"/>
+        <p>张海玉主任</p>
+    </div>
+    <p>在这里，我们是最可爱的一批人，我们有时像孩子，有时像战士</p>
+    <div class="image-box">
+        <img src="https://cdn.img.wenhairu.com/images/2020/06/07/fU3uv.jpg" alt="图6" title="图6" width="100%"/>
+        <p>0G08第一次聚会</p>
+        <img src="https://cdn.img.wenhairu.com/images/2020/06/05/YlN9t.jpg" alt="图7" title="图7" width="100%"/>
+        <p>篮球赛</p>
+    </div>
+</div>
+<div class="title-pic">
+    <div class="title-pic-text">今天的你</div>
+</div>
+<div class="student-account">
+    <p>今天是你在南理工的第<span id="date"></span>天，疫情期间，你可能无法回到学校，在家的你，是否怀念<span>{{ student.dormitory }}</span>了呢？</p>
+    <div class="image-box">
+        <img src="https://iph.href.lu/200x100?text=某张宿舍照片&fg=666666&bg=cccccc" alt="图8" title="图8" width="100%"/>
+        <p>宿舍</p>
+    </div>
+    <p style="color: #e7e7e7;font-size: 0.8em;text-align: center;text-indent: unset">以下数据不包含科研训练、毕业设计、毕业实习、形式与政策、通识选修课以及计划外课程，不保证正确性</p>
+    <p>时间就像是电磁波，是空间弯曲带给人类的一种错觉。在这些漫长而又匆匆的日子里，<label id="score"><span>{{ student.get_credits }}</span>学分的课程组成了你大学的主旋律；<span>{{ student.total_score }}</span>的成绩总和，是你汗水与拼搏的见证；平均学分绩<span>{{ student.average_score }}</span>，在{{ student.discipline }}专业排名第<span>{{ student.rank }}</span>，无论高或低，都是四年时光的沉积。</label></p>
+</div>
+<div class="title-pic">
+    <div class="title-pic-text">未来的你</div>
+</div>
+<div class="student-account">
+    <div class="image-box">
+        <img src="https://iph.href.lu/200x100?text=不知道什么照片&fg=666666&bg=cccccc" alt="图9" title="图9" width="100%"/>
+        <p>emmmm</p>
+    </div>
+    <p>各自奔前程的身影，匆匆渐行渐远。未来在哪里平凡啊，谁给我答案。</p>
+    <p>未来的你，即将告别电光16，踏上征程。“世上有朵英雄的花，那是青春放光华”，你<span id="feature"></span>。孟子说，“生于忧患，死于安乐”，习近平总书记鼓励青年人“青春由磨砺而出彩，人生因奋斗而升华。”，未来是坎坷的，但也是铸就辉煌的。未来的你，必将绽放</p>
+    <p>在毕业季，我给大家准备了云毕业照网站，技术较为粗糙，还请多多原谅，希望大家玩的开心，记住此刻，迈向前程！</p>
+</div>
+
+
+</div>
+<a class="menu-a" href="{% url 'APPApi:graduationPhoto_index' %}">跳转到&gt;&gt;&gt;云·毕业照</a>
+</body>
+<script>
+    $(document).ready(function () {
+        $("#date").text(dateDiff("{{ student.admission_time | slice:'4' }}-{{ student.admission_time | slice:'4:' }}", ))
+        $("#feature").text(getFeature("{{ student.byqx }}", "{{ student.byqxdw }}"))
+        checkScore("{{ student.total_score }}")
+    })
+    // 计算在校时间
+    function dateDiff(firstDate_str){
+        var firstDate = new Date(firstDate_str);
+        var secondDate = new Date();
+        var diff = Math.abs(firstDate.getTime() - secondDate.getTime())
+        return parseInt(diff / (1000 * 60 * 60 * 24))
+    }
+    // 计算毕业去向
+    function getFeature (byqx, byqxdw) {
+        var feature
+        switch (byqx) {
+            case "保研":
+                feature = "成功保研到"+byqxdw;
+                break;
+            case "出国（未定）":
+                feature = "决定出国，目前"+byqxdw;
+                break;
+            case "出国（已定）":
+                feature = "决定出国，目标是"+byqxdw;
+                break;
+            case "出国（已有offer）":
+                feature = "决定出国，并且"+byqxdw;
+                break;
+            case "二战":
+                feature = "考研失利，准备二战，但是我"+byqxdw;
+                break;
+            case "考研":
+                feature = "目标是"+byqxdw;
+                break;
+            case "考研（已录取）":
+                feature = "已经成功上岸，被"+byqxdw+"录取";
+                break;
+            case "未就业":
+                feature = "还没有确定自己的工作单位，未来究竟在何方";
+                break;
+            case "已就业":
+                feature = "马上就要和读书的生涯说一句再见，准备投入到职场的浪潮中去";
+                break;
+            case "延长学制":
+                feature = "是否能够让自己的青春，绽放光华";
+                break;
+        }
+        return feature;
+    }
+
+    // 修改学分，看看是否是“无”
+    function checkScore(score) {
+        if (score === "无") {
+            $("#score").html("<span>虽然你修了很多的学分，考出了不错的成绩，但是很对不起，我们暂时没有你的数据。仅仅是因为你太过优秀，去了新国大留学，只能祝愿你前程似锦，未来可期！</span>")
+        }
+    }
+</script>
+</html>

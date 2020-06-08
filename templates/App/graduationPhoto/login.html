@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>云毕业照 | 登录</title>
+    <link rel="stylesheet" href="{% static 'PC/css/form.css' %}">
+    <link rel="stylesheet" href="{% static 'PC/css/base.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
+        .error{
+            color: white;
+        }
+        .pure-form button[type=submit] {
+            margin: .7em auto 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="body-title"><label>{{ title }}</label></div>
+<p style="text-align: center;color: white">仅电光16同学参与<br>登录即视为同意本网站隐私政策</p>
+<div class="form">
+    <form class="pure-form pure-form-aligned" method="post" action="./" enctype="multipart/form-data">
+        <fieldset>
+            {% csrf_token %}
+            {% for form_item in form %}
+                <div class="pure-control-group">
+                    {% if not form_item.is_hidden %}
+                        {{ form_item.label_tag }}
+                    {% endif %}
+                    {{ form_item }}
+                </div>
+            {% endfor %}
+            <div class="error">{{ message }}</div>
+            <button class="form-button" type="submit"><i class="iconfont icon-wancheng"></i> 提交</button>
+        </fieldset>
+    </form>
+</div>
+
+</body>
+<script>
+    $(document).ready(function () {
+        parent.reinitIframe();
+        $('form').submit(function () {
+            $('button').attr('disabled', 'disabled');
+        })
+    })
+</script>
+</html>

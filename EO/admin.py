@@ -68,3 +68,30 @@ class BulletChatAdmin(admin.ModelAdmin):
     ]
 
     list_filter = ['verify']
+
+
+@admin.register(GraduationStudent)
+class GraduationStudentAdmin(admin.ModelAdmin):
+    list_display = [
+        'pk',
+        'student_id',
+        'name',
+        'card_id',
+        'class_num',
+        'gender',
+        'admission_time',
+        'dormitory',
+        'address',
+        'score',
+        'graduation_school',
+        'ksh',
+        'byqx',
+        'byqxdw',
+        'total_score',
+        'get_credits',
+        'average_score',
+        'rank',
+        'discipline',
+    ]
+
+    search_fields = ['name', 'student_id']

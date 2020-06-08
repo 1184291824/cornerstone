@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>云·毕业照 | 菜单</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <style>
+        .menu-a {
+            color: white;
+            font-size: 1.2em;
+            display: block;
+            margin: 50px auto;
+            border: solid 2px white;
+            border-radius: 25px;
+            line-height: 2em;
+            width: 70%;
+            min-width: 7em;
+            text-align: center;
+            padding: 0 2em;
+            text-decoration: none;
+        }
+
+        body {
+            padding-top: 40px;
+        }
+    </style>
+</head>
+<body>
+<a class="menu-a" href="{% url 'APPApi:graduationPhoto_mybill' %}">我的大学账单</a>
+<a class="menu-a" href="{% url 'APPApi:graduationPhoto_index' %}">云·毕业照</a>
+
+</body>
+</html>

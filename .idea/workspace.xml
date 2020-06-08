@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6f1f55bd-7dd9-4d2b-b66e-81b2dff3b78f" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EO/AppApi/Light.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/AppApi/Light.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EO/AppApi/apiUrls.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/AppApi/apiUrls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/App/520.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App/520.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EO/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EO/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EO/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
         <option value="HTML File" />
       </list>
     </option>
@@ -38,11 +41,26 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/App" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\cornerstone\static\App\graduation" />
+      <recent name="D:\project\cornerstone\static" />
+      <recent name="D:\project\cornerstone\templates\PC" />
+      <recent name="D:\project\cornerstone" />
+      <recent name="D:\project\cornerstone\EO\views" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\project\cornerstone\templates\App" />
       <recent name="D:\project\cornerstone\App" />
@@ -50,14 +68,8 @@
       <recent name="D:\project\cornerstone\templates" />
       <recent name="D:\project\cornerstone\EO\static" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\project\cornerstone\static" />
-      <recent name="D:\project\cornerstone\templates\PC" />
-      <recent name="D:\project\cornerstone" />
-      <recent name="D:\project\cornerstone\EO\views" />
-    </key>
   </component>
-  <component name="RunManager" selected="Django Server.cornerstone">
+  <component name="RunManager" selected="Python.graduationPhoto">
     <configuration name="Light" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="cornerstone" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -72,6 +84,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="D:\project\cornerstone\EO\AppApi\Light.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="graduationPhoto" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="cornerstone" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/EO/AppApi" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/EO/AppApi/graduationPhoto.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -103,6 +137,11 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.graduationPhoto" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -137,7 +176,27 @@
       <workItem from="1589717594168" duration="1313000" />
       <workItem from="1589760950167" duration="19236000" />
       <workItem from="1589803874107" duration="1017000" />
-      <workItem from="1589849522584" duration="313000" />
+      <workItem from="1589849522584" duration="1117000" />
+      <workItem from="1589881353013" duration="874000" />
+      <workItem from="1589972999084" duration="22000" />
+      <workItem from="1590739076020" duration="4992000" />
+      <workItem from="1590833154499" duration="1556000" />
+      <workItem from="1590838780351" duration="9036000" />
+      <workItem from="1591147833205" duration="7269000" />
+      <workItem from="1591167938543" duration="10102000" />
+      <workItem from="1591186651917" duration="13991000" />
+      <workItem from="1591231419885" duration="9542000" />
+      <workItem from="1591250835477" duration="5484000" />
+      <workItem from="1591275237515" duration="6877000" />
+      <workItem from="1591330182161" duration="77000" />
+      <workItem from="1591330307106" duration="5440000" />
+      <workItem from="1591438679457" duration="1706000" />
+      <workItem from="1591445302879" duration="12647000" />
+      <workItem from="1591487961675" duration="8889000" />
+      <workItem from="1591506796201" duration="21810000" />
+      <workItem from="1591574968687" duration="47000" />
+      <workItem from="1591581347407" duration="4019000" />
+      <workItem from="1591597353838" duration="2849000" />
     </task>
     <servers />
   </component>
@@ -145,6 +204,14 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="449" y="152" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591330223019">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="449" y="152" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.834@0.0.1536.834" timestamp="1591330223019" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1589973019372">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1589973019372" />
     <state width="1493" height="214" key="GridCell.Tab.0.bottom" timestamp="1589614588459">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -161,14 +228,18 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="214" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1589614588459" />
+    <state x="270" y="61" width="1118" height="711" key="SettingsEditor" timestamp="1590834577644">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="270" y="61" width="1118" height="711" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1590834577644" />
     <state width="562" height="446" key="SwitcherDM" timestamp="1589778261221">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="562" height="446" key="SwitcherDM/0.0.1536.834@0.0.1536.834" timestamp="1589778261221" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1589616816483">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1591587416365">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1589616816483" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1591587416365" />
     <state x="491" y="328" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1589617130429">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

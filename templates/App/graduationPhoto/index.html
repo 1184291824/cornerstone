@@ -1,0 +1,84 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+{#    <link rel="stylesheet" href="{% static 'PC/css/form.css' %}">#}
+    <link rel="stylesheet" href="{% static 'PC/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'App/graduation/index.css' %}">
+    <link href="https://cdn.bootcdn.net/ajax/libs/jquery-jcrop/2.0.4/css/Jcrop.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery-jcrop/2.0.4/js/Jcrop.min.js"></script>
+    <script src="{% static 'App/graduation/index.js' %}"></script>
+    <title>云毕业照 | 主页</title>
+</head>
+<body>
+<a href="{% url 'APPApi:graduationPhoto_logout' %}">退出登录</a>
+
+{#<iframe src="//player.bilibili.com/player.html?aid=70501997&bvid=BV1GJ411c7Ts&cid=122144467&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="false" width="80%" height="500px" style="margin: 0 auto"></iframe>#}
+
+<div class="title-pic">
+    <div class="title-pic-text">我的毕业照</div>
+</div>
+<div class="box" id="my-photo"
+     pic-url="{% if student.gender == "男" %}https://cdn.img.wenhairu.com/images/2020/06/07/YviTf.png{% else %}https://cdn.img.wenhairu.com/images/2020/06/07/Yvsvd.png{% endif %}">
+    {% if student.photo == "" %}
+        <div class="image-box">
+            <div class="image-contain">
+                <img id="img1" src="https://iph.href.lu/200x240?text=我的照片&fg=666666&bg=cccccc" title="等待您上传一张图"
+                     alt="等待您上传一张图">
+            </div>
+
+            <input id="img1-input" name="img1-input" style="display: none" type="file"
+                   accept="image/png,image/jpg,image/jpeg">
+            <button id="img1-button" onclick="img1_upload()">上传</button>
+        </div>
+        <div class="image-box">
+            <div class="image-contain">
+                <img id="img2" src="https://iph.href.lu/200x240?text=人像抠图&fg=666666&bg=cccccc" title="等待您上传一张图"
+                     alt="等待您上传一张图">
+            </div>
+            <button id="img2-button" disabled="disabled" onclick="getbody()">提取人像</button>
+        </div>
+        <div class="image-box">
+            <div class="image-contain">
+                <img id="img3" src="https://iph.href.lu/200x240?text=合成照片&fg=666666&bg=cccccc" title="等待您上传一张图"
+                     alt="等待您上传一张图">
+            </div>
+            <button id="img3-button" disabled="disabled" onclick="img3_upload()">提交</button>
+        </div>
+    {% else %}
+        <div class="image-box">
+            <div class="image-contain">
+                <img id="img4" src="{{ student.photo }}" title="我的毕业照" alt="我的毕业照">
+            </div>
+            <button id="img4-button" onclick="img4_remake()">重新制作</button>
+        </div>
+    {% endif %}
+</div>
+<canvas id="img3-canvas" width="200" height="240" style="display: none"></canvas>
+{% if student.photo != "" %}
+    <div class="title-pic">
+        <div class="title-pic-text">大合影</div>
+    </div>
+    <div class="image-box" id="graduation-photo">
+        <canvas id="graduation-canvas" width="1417" height="408" style="display: none"></canvas>
+        <img id="graduation-bk" src="https://cdn.img.wenhairu.com/images/2020/06/04/Yh0yA.jpg" width="100%" alt="合影">
+    </div>
+{% else %}
+    <p style="text-align: center;color: white">上传自己照片后，可以看到已经上传了图片的同学的年级合影</p>
+{% endif %}
+<a class="menu-a" href="{% url 'APPApi:graduationPhoto_mybill' %}">跳转到&gt;&gt;&gt;我的大学账单</a>
+
+</body>
+<script>
+    $(document).ready(function () {
+        {% if student.photo != "" %}
+            var photos = {{ student_photos | safe }}; // 图像信息列表
+            showPhotos(photos);
+        {% endif %}
+        parent.reinitIframe(); // 重置本页面的高度
+    })
+</script>
+</html>
