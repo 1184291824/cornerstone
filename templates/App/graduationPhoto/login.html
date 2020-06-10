@@ -7,6 +7,7 @@
     <title>云毕业照 | 登录</title>
     <link rel="stylesheet" href="{% static 'PC/css/form.css' %}">
     <link rel="stylesheet" href="{% static 'PC/css/base.css' %}">
+    <link rel="shortcut icon" href="{% static 'PC/img/favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -43,9 +44,11 @@
 </body>
 <script>
     $(document).ready(function () {
+        $(".waiting", parent.document).hide();
         parent.reinitIframe();
         $('form').submit(function () {
             $('button').attr('disabled', 'disabled');
+            $(".waiting", parent.document).show();
         })
     })
 </script>

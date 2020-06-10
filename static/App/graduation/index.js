@@ -34,8 +34,9 @@ function readFile() {
         }
 
         $('#img1-button').text('重新上传')
-        if (!/image\/\w+/.test(file.type)) {  // 检测上传的是否为图片
-            alert("请确保文件为图像类型");
+        console.log(file.type)
+        if (!/image\/(jpeg|png|jpg)/.test(file.type)) {  // 检测上传的是否为图片
+            alert("请确保文件为图像类型，目前支持jpeg、png、jpg三种格式");
             return false;
         } else if (file.size > 1024 * 1024 * 1.9) {
             alert("图片大小不得大于1.9MB，请您重新上传");
@@ -48,6 +49,7 @@ function readFile() {
                 // result.innerHTML = '<img src="' + this.result + '" alt=""/>';
                 $('#img1').attr('src', this.result);
                 $('#img2-button').removeAttr('disabled');
+                getbody(file.type);
             }
         }
     }
@@ -55,7 +57,7 @@ function readFile() {
 }
 
 // 提取人像，img2-button的第一个点击事件
-function getbody(url) {
+function getbody(img_type) {
     $('.waiting', parent.document).html('正在提取人像<br>这需要一段时间').show();
     $('#img2-button').attr('disabled', 'disabled')
     var image = $('#img1').attr('src').split('base64,')[1];
@@ -67,8 +69,9 @@ function getbody(url) {
             image: encodeURI(image),
         },
         success: function (response) {
+            console.log(response)
             if (response.foreground) {
-                $('#img2').attr('src', 'data:image/jpg/png;base64,' + response.foreground);
+                $('#img2').attr('src', 'data:'+img_type+';base64,' + response.foreground);
                 $('#img2-button').text('截取头像').removeAttr('disabled').attr('onclick', 'cut_head()');
                 create_jcrop(); // 启动jcrop，进行图像截取
 

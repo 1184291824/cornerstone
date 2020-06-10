@@ -8,6 +8,7 @@
 {#    <link rel="stylesheet" href="{% static 'PC/css/form.css' %}">#}
     <link rel="stylesheet" href="{% static 'PC/css/base.css' %}">
     <link rel="stylesheet" href="{% static 'App/graduation/index.css' %}">
+    <link rel="shortcut icon" href="{% static 'PC/img/favicon.ico' %}" type="image/x-icon">
     <script src=""{% static 'App/graduation/index.js' %}></script>
     <title>云毕业照 | 我的大学账单</title>
     <style>
@@ -107,6 +108,11 @@
         $("#date").text(dateDiff("{{ student.admission_time | slice:'4' }}-{{ student.admission_time | slice:'4:' }}", ))
         $("#feature").text(getFeature("{{ student.byqx }}", "{{ student.byqxdw }}"))
         checkScore("{{ student.total_score }}")
+        $(".waiting", parent.document).hide();
+        $(".menu-a").click(function () {
+            $(".waiting", parent.document).show();
+        })
+        parent.reinitIframe();
     })
     // 计算在校时间
     function dateDiff(firstDate_str){

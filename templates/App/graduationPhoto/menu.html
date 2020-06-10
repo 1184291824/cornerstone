@@ -1,9 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <title>云·毕业照 | 菜单</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="{% static 'PC/img/favicon.ico' %}" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
         .menu-a {
             color: white;
@@ -24,6 +27,14 @@
             padding-top: 40px;
         }
     </style>
+    <script>
+        $(document).ready(function () {
+            $(".waiting", parent.document).hide();
+            $(".menu-a").click(function () {
+                $(".waiting", parent.document).show();
+            })
+        })
+    </script>
 </head>
 <body>
 <a class="menu-a" href="{% url 'APPApi:graduationPhoto_mybill' %}">我的大学账单</a>

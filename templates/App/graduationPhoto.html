@@ -6,51 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>云·毕业照</title>
     <link rel="stylesheet" href="{% static 'PC/css/base.css' %}">
+    <link rel="shortcut icon" href="{% static 'PC/img/favicon.ico' %}" type="image/x-icon">
     <style>
         #music {
             margin: 20px auto 0 auto;
             text-align: center;
         }
+
+        .waiting-text {
+            position: fixed;
+            width: 8em;
+            padding: 0 2em;
+            border: solid white 2px;
+            background-color: #1f8dd6;
+            color: white;
+            bottom: 30%;
+            left: calc(50% - 6em);
+            line-height: 50px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
         .waiting {
-        position: fixed;
-        width: 8em;
-        padding: 0 2em;
-    {#height: 50px;#} border: solid white 2px;
-        background-color: #1f8dd6;
-        color: white;
-        bottom: 30%;
-        left: calc(50% - 6em);
-        line-height: 50px;
-        border-radius: 15px;
-        text-align: center;
-        display: none;
-    }
+            position: fixed;
+            top: 0;
+            background-color: rgba(0,0,0,0.3);
+            z-index: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #index {
+            overflow-y: hidden;
+        }
     </style>
 </head>
 <body>
 <div class="body-title"><label>云·毕业照</label></div>
 <div id="music">
-    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="95%" height="100" src="//music.163.com/outchain/player?type=0&id=5048398421&auto=1&height=90"></iframe>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="95%" height="100"
+            src="//music.163.com/outchain/player?type=0&id=5048398421&auto=1&height=90"></iframe>
 </div>
-<iframe id="index" src="{% url 'APPApi:graduationPhoto_menu' %}" width="100%" allowfullscreen frameborder="0" onload="reinitIframe()" style="overflow: hidden"></iframe>
-<div class="waiting"></div>
+<iframe id="index" src="{% url 'APPApi:graduationPhoto_menu' %}" width="100%" allowfullscreen frameborder="0"
+        onload="reinitIframe()" style="overflow: hidden"></iframe>
+<div class="waiting">
+    <div class="waiting-text">正在加载</div>
+</div>
+
 </body>
 <script>
+    // 重新调整框架的高度
     function reinitIframe() {
         var iframe = document.getElementById("index");
         try {
             var bHeight = iframe.contentWindow.document.body.scrollHeight;
             var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
-            {#console.log("bHeight:"+bHeight+";dHeight:"+dHeight);#}
-            if (dHeight-bHeight>=100) {
-                iframe.height = bHeight+20;
+            console.log("bHeight:" + bHeight + ";dHeight:" + dHeight);
+            if (dHeight - bHeight >= 100) {
+                iframe.height = bHeight + 20;
+            } else if (bHeight - dHeight >= 100) {
+                iframe.height = dHeight + 20;
             } else {
-                iframe.height = Math.max(bHeight, dHeight) + 10;
+                iframe.height = Math.max(bHeight, dHeight) + 20;
             }
-
         } catch (ex) {
         }
+        document.body.scrollIntoView() // 滑动到顶部
     }
-    window.onresize=function(){ reinitIframe();}
+
+    {#window.onresize = function () {#}
+    {#    reinitIframe();#}
+    {#}#}
 </script>
 </html>

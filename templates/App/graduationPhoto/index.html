@@ -8,6 +8,7 @@
 {#    <link rel="stylesheet" href="{% static 'PC/css/form.css' %}">#}
     <link rel="stylesheet" href="{% static 'PC/css/base.css' %}">
     <link rel="stylesheet" href="{% static 'App/graduation/index.css' %}">
+    <link rel="shortcut icon" href="{% static 'PC/img/favicon.ico' %}" type="image/x-icon">
     <link href="https://cdn.bootcdn.net/ajax/libs/jquery-jcrop/2.0.4/css/Jcrop.min.css" rel="stylesheet">
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery-jcrop/2.0.4/js/Jcrop.min.js"></script>
     <script src="{% static 'App/graduation/index.js' %}"></script>
@@ -79,6 +80,10 @@
             showPhotos(photos);
         {% endif %}
         parent.reinitIframe(); // 重置本页面的高度
+        $(".waiting", parent.document).hide();
+        $(".menu-a").click(function () {
+            $(".waiting", parent.document).show();
+        })
     })
 </script>
 </html>

@@ -52,7 +52,7 @@ def init_student(request):
         return HttpResponse("success")
     else:
         form = GraduationInit()
-        return render(request, "APP/graduationPhoto/initStudent.html", {
+        return render(request, "App/graduationPhoto/initStudent.html", {
             'form': form,
         })
 

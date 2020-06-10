@@ -3,10 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="6f1f55bd-7dd9-4d2b-b66e-81b2dff3b78f" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EO/AppApi/apiUrls.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/AppApi/apiUrls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EO/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EO/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EO/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EO/AppApi/graduationPhoto.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/AppApi/graduationPhoto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/App/graduation/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/App/graduation/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/App/graduationPhoto.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App/graduationPhoto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/App/graduationPhoto/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App/graduationPhoto/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/App/graduationPhoto/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App/graduationPhoto/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/App/graduationPhoto/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App/graduationPhoto/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/App/graduationPhoto/mybill.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App/graduationPhoto/mybill.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +199,9 @@
       <workItem from="1591506796201" duration="21810000" />
       <workItem from="1591574968687" duration="47000" />
       <workItem from="1591581347407" duration="4019000" />
-      <workItem from="1591597353838" duration="2849000" />
+      <workItem from="1591597353838" duration="5914000" />
+      <workItem from="1591703471204" duration="2241000" />
+      <workItem from="1591752724582" duration="5212000" />
     </task>
     <servers />
   </component>
