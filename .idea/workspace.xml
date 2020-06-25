@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6f1f55bd-7dd9-4d2b-b66e-81b2dff3b78f" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EO/AppApi/apiUrls.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/AppApi/apiUrls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EO/AppApi/graduationPhoto.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/AppApi/graduationPhoto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cornerstone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cornerstone/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/App/graduationPhoto.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App/graduationPhoto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/App/graduationPhoto/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App/graduationPhoto/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/App/graduationPhoto/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App/graduationPhoto/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/App/graduationPhoto/mybill.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App/graduationPhoto/mybill.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -206,7 +200,7 @@
       <workItem from="1592831251695" duration="6862000" />
       <workItem from="1592917103069" duration="4800000" />
       <workItem from="1592966084954" duration="15724000" />
-      <workItem from="1593068212856" duration="2024000" />
+      <workItem from="1593068212856" duration="2589000" />
     </task>
     <servers />
   </component>

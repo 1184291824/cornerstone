@@ -85,10 +85,10 @@
 </div>
 <div class="student-account">
     <p style="color: #e7e7e7;font-size: 0.8em;text-align: center;text-indent: unset">以下图片部分来自南京理工大学微信公众号</p>
-    <p style="text-align: center;text-indent: unset;">亲爱的你，是否还把这些情景藏在心底</p>
-    <p style="text-align: center;text-indent: unset;">孤独回忆，这些日子有太多的相聚分离</p>
-    <p style="text-align: center;text-indent: unset;">匆匆四季，二月兰开了又谢，你来了又去</p>
-    <p style="text-align: center;text-indent: unset;">爱在南理，四年的忙忙碌碌，我不能忘记</p>
+    <p style="text-align: center;text-indent: unset;">亲爱的你<br/>是否还把这些情景藏在心底</p>
+    <p style="text-align: center;text-indent: unset;">孤独回忆<br/>这些日子有太多的相聚分离</p>
+    <p style="text-align: center;text-indent: unset;">匆匆四季<br/>二月兰开了又谢，你来了又去</p>
+    <p style="text-align: center;text-indent: unset;">爱在南理<br/>四年的忙忙碌碌，我不能忘记</p>
     <div class="image-box">
         <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9BOEZpYzM2ZWg5a3JVdUJyUE9jdmNxbEllaEFvNklxUkJmTEVublp0MlhpYWt0NmQwQVhIMHZmT05uUzJaT1lyY0pBZ1A2NnE2ZFNqVGhLQk12MHY4V1pRLzY0MA" alt="图8" title="图8" width="100%"/>
     </div>
@@ -109,10 +109,10 @@
         <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9BOEZpYzM2ZWg5a3JVdUJyUE9jdmNxbEllaEFvNklxUkJNV0hubXlTRUdHU1VRSk1LQVozT0JKY3BaSGlhc3FjREtZZ1hSa1Y2OVVXdGEzNmFXQkZpYmtrZy82NDA" alt="图8" title="图8" width="100%"/>
     </div>
 
-    <p style="text-align: center;text-indent: unset;">多少次的回眸，终换来四年的陪伴</p>
-    <p style="text-align: center;text-indent: unset;">多少次的吐槽，也忘不了早中晚餐</p>
-    <p style="text-align: center;text-indent: unset;">即使他们不在的日子，也要记得按时吃饭</p>
-    <p style="text-align: center;text-indent: unset;">即使你们再忙再累，也不能让肚子受难</p>
+    <p style="text-align: center;text-indent: unset;">多少次的回眸<br/>终换来四年的陪伴</p>
+    <p style="text-align: center;text-indent: unset;">多少次的吐槽<br/>也忘不了早中晚餐</p>
+    <p style="text-align: center;text-indent: unset;">即使他们不在的日子<br/>也要记得按时吃饭</p>
+    <p style="text-align: center;text-indent: unset;">即使你们再忙再累<br/>也不能让肚子受难</p>
     <div class="image-box">
         <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9BOEZpYzM2ZWg5a3JVdUJyUE9jdmNxbEllaEFvNklxUkJmbTRlMkN3UzJtTUNpYk5RRkdpYW9qeElVTjFRekZsT1hlQzNWaWJkeGhpYUJFUjlIcEZpYzUyQ1haZy82NDA" width="100%"/>
     </div>
@@ -159,7 +159,7 @@
     </div>
     <p style="color: #e7e7e7;font-size: 0.8em;text-align: center;text-indent: unset">以下数据不包含通识选修课以及计划外课程，不保证正确性</p>
     <p style="text-align: center;text-indent: unset;">（最最刺激和扎心的项目来了）</p>
-    <p style="text-align: center;text-indent: unset;">时间，是空间弯曲带给人类的一种错觉</p>
+    <p style="text-align: center;text-indent: unset;">时间<br/>是空间弯曲带给人类的一种错觉</p>
     <p>在这些漫长而又匆匆的日子里，<span>{{ student.get_credits }}</span>学分的课程组成了你大学的主旋律</p>
     <p>多少日夜积累起的汗水与疲惫，才换来了<span>{{ student.total_score }}</span>的总成绩</p>
     <p>平均学分绩<span>{{ student.average_score }}</span>，在<span>{{ student.discipline }}</span>专业排名第<span>{{ student.rank }}</span>，无论高或低，都是四年时光的沉积。</p>
@@ -181,7 +181,9 @@
 </div>
 <div class="student-account">
     <p>最后的最后，请允许我自私的唠叨两句吧。这之后，我们也许就真的再也不见。我们一个个伪装的像是习惯了离别和相聚的列车长，但是当我们人生列车上的乘客一个个走下去，一个个再也不会上来时，泪水真的禁不住眼眶的承载，只为不忍看到你离去的身影。就让你年轻美好的样子永远的留在别人的心中吧，当我们芳华已逝，身影佝偻时，现在的这些日子，也会变成最美的回忆吧</p>
-    <p>{{ student.photo }}</p>
+    {% if student.photo != "nan" %}
+        <p>{{ student.photo }}</p>
+    {% endif %}
 </div>
 </body>
 <script>
