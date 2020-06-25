@@ -7,6 +7,7 @@
     <title>毕业账单</title>
     <link rel="stylesheet" href="{% static 'PC/css/base.css' %}">
     <link rel="shortcut icon" href="{% static 'PC/img/favicon.ico' %}" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
         #music {
             margin: 20px auto 0 auto;
@@ -72,7 +73,8 @@
             }
         } catch (ex) {
         }
-        document.body.scrollIntoView() // 滑动到顶部
+        {#document.body.scrollIntoView() // 滑动到顶部#}
+        $(".waiting").hide();
     }
 
     {#window.onresize = function () {#}

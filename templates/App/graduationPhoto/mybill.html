@@ -188,13 +188,13 @@
 </body>
 <script>
     $(document).ready(function () {
-        $("#date").text(dateDiff("{{ student.admission_time | slice:'4' }}-{{ student.admission_time | slice:'4:' }}", ))
+        $("#date").text(dateDiff("{{ student.admission_time | slice:'4' }}-{{ student.admission_time | slice:'4:' }}"))
         $("#feature").text(getFeature("{{ student.byqx }}", "{{ student.byqxdw }}"))
-        $(".waiting", parent.document).hide();
+
         $(".menu-a").click(function () {
             $(".waiting", parent.document).show();
         })
-        parent.reinitIframe();
+        {#parent.reinitIframe();#}
     })
     // 计算在校时间
     function dateDiff(firstDate_str){

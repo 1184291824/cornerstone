@@ -44,8 +44,8 @@
 </body>
 <script>
     $(document).ready(function () {
-        $(".waiting", parent.document).hide();
-        parent.reinitIframe();
+        {#$(".waiting", parent.document).hide();#}
+        {#parent.reinitIframe();#}
         $('form').submit(function () {
             $('button').attr('disabled', 'disabled');
             $(".waiting", parent.document).show();
