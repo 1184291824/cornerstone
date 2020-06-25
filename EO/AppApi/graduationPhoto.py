@@ -46,6 +46,7 @@ def init_student(request):
                     average_score=table['平均学分绩'][col],
                     rank=table['排名'][col],
                     discipline=table['专业'][col],
+                    photo=table['作者的话'][col],
                 )
             )
         GraduationStudent.objects.bulk_create(graduation_student_list)
@@ -76,14 +77,14 @@ def login(request):
                 request.session['graduation_login_status'] = 1
                 request.session['student_id'] = student.student_id
                 request.session['name'] = student.name
-                return redirect('APPApi:graduationPhoto_menu')
+                return redirect('APPApi:graduationPhoto_mybill')
             else:
                 message = '您输入的信息有误'
         except GraduationStudent.DoesNotExist:
             message = '您输入的用户不存在'
     else:
         if login_status != 0:
-            return redirect('APPApi:graduationPhoto_menu')
+            return redirect('APPApi:graduationPhoto_mybill')
         form = GraduationLogin()
     return render(request, 'App/graduationPhoto/login.html', {
         'form': form,

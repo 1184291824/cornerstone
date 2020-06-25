@@ -24,8 +24,8 @@ SECRET_KEY = 'f!asqk8^es)7_vk&%-e87oz#o9c)28!e7^k#0(dcpe^j+p+^4v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-# PythonAnywhere = False  # 设为False是为了本地支持
-PythonAnywhere = True  # 设为True是为了上线PythonAnywhere支持
+PythonAnywhere = False  # 设为False是为了本地支持
+# PythonAnywhere = True  # 设为True是为了上线PythonAnywhere支持
 
 if PythonAnywhere is False:
     DEBUG = True

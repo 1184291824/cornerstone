@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6f1f55bd-7dd9-4d2b-b66e-81b2dff3b78f" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EO/AppApi/apiUrls.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/AppApi/apiUrls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EO/AppApi/graduationPhoto.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO/AppApi/graduationPhoto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/App/graduation/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/App/graduation/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cornerstone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cornerstone/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/App/graduationPhoto.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App/graduationPhoto.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/App/graduationPhoto/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App/graduationPhoto/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/App/graduationPhoto/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App/graduationPhoto/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/App/graduationPhoto/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App/graduationPhoto/menu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/App/graduationPhoto/mybill.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App/graduationPhoto/mybill.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +201,12 @@
       <workItem from="1591581347407" duration="4019000" />
       <workItem from="1591597353838" duration="5914000" />
       <workItem from="1591703471204" duration="2241000" />
-      <workItem from="1591752724582" duration="5212000" />
+      <workItem from="1591752724582" duration="6705000" />
+      <workItem from="1591924392386" duration="27000" />
+      <workItem from="1592831251695" duration="6862000" />
+      <workItem from="1592917103069" duration="4800000" />
+      <workItem from="1592966084954" duration="15724000" />
+      <workItem from="1593068212856" duration="2024000" />
     </task>
     <servers />
   </component>
@@ -213,10 +218,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="449" y="152" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.834@0.0.1536.834" timestamp="1591330223019" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1589973019372">
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1591924417256">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1589973019372" />
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1591924417256" />
     <state width="1493" height="214" key="GridCell.Tab.0.bottom" timestamp="1589614588459">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

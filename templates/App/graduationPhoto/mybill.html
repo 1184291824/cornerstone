@@ -17,7 +17,7 @@
             margin: 20px auto;
             display: block;
             height: unset;
-
+            max-width: 400px;
         }
         .image-box>p{
             font-size: 16px;
@@ -35,79 +35,159 @@
     <div class="title-pic-text">记忆中的模样</div>
 </div>
 <div class="student-account">
-    <p>那是<span>{{ student.admission_time | slice:'4' }}年{{ student.admission_time | slice:'4:' }}月</span>的一天，来自<span>{{ student.address }}{{ student.graduation_school }}</span>的小{% if student.gender == '男' %}帅哥{% else %}可爱{% endif %}<span>{{ student.name }}</span>以<span>{{ student.score }}</span>的高考分数考入南京理工大学。</p>
+    <p>那是<span>{{ student.admission_time | slice:'4' }}年{{ student.admission_time | slice:'4:' }}月</span>的一天，来自<span>{{ student.address }}</span>的<span>{{ student.graduation_school }}</span>毕业生<span>{{ student.name }}</span>小{% if student.gender == '男' %}帅哥{% else %}可爱{% endif %}以<span>{{ student.score }}</span>的高考分数考入南京理工大学。</p>
     <div class="image-box">
-        <img src="https://cdn.img.wenhairu.com/images/2020/06/07/fUOzs.jpg" alt="图1" title="图1" width="100%"/>
+        <img src="https://img-blog.csdnimg.cn/20200622215346247.jpg" alt="图1" title="图1" width="100%"/>
         <p>南大门</p>
     </div>
     <p>褪去<span>{{ student.ksh }}</span>，换上<span>{{ student.student_id }}</span>，一个编号的替换，让你从懵懂走向青春，高中的记忆是那么可歌可泣，但即使再不舍，也要微笑着挥手道别，和过去说一声再见</p>
     <div class="image-box">
-        <img src="https://cdn.img.wenhairu.com/images/2020/06/07/fUbNn.gif" alt="图2" title="图2" width="100%"/>
+        <img src="http://p0.meituan.net/poicontent/465d9bc479cfe6fa4bb1466f06da15bf477748.gif" alt="图2" title="图2" width="100%"/>
         <p>即使再不舍，也要微笑着挥手道别</p>
     </div>
+    <p>请原谅我无法回溯到四年前的今天，请原谅我无法将那个年轻的你带到今天。就让那个年轻的我们，永远的留在回忆里吧</p>
 </div>
 <div class="title-pic">
     <div class="title-pic-text">相遇电光16</div>
 </div>
 <div class="student-account">
-    <p><span>相遇是种来自于时光的馈赠</span>，在南理，你和电光16相遇，成为了<span>{{ student.class_num }}</span>班的一员。在四年的时光中，我们的故事太多太多</p>
-    <p>在这里，我们是流血流汗不流泪的战士，是站在大地上的神兵</p>
+    <p><span>相遇是种来自于时光的馈赠</span>，这句话美就美在相遇。在南京，在这个美丽的地方，你和电光16相遇，成为了<span>{{ student.class_num }}</span>班的一员。在四年的时光中，我们的故事太多太多，就让我一起带你回忆一下吧~</p>
+    <p>还记得军训吗？那个能让我们一辈子都记住的18天！</p>
     <div class="image-box">
-        <img src="https://cdn.img.wenhairu.com/images/2020/06/05/Yl8Yu.md.png" alt="图3" title="图3" width="100%"/>
+        <img src="https://img-blog.csdnimg.cn/20200623212025764.png" alt="图3" title="图3" width="100%"/>
         <p>军训汇报表彰大会</p>
     </div>
-    <p>在这里，我们遇见了既爱又恨的他们</p>
+    <p>在这里，我们是流血流汗不流泪的战士，是站在大地上的神兵</p>
     <div class="image-box">
-        <img src="https://iph.href.lu/200x100?text=四位第一届助理军装照&fg=666666&bg=cccccc" alt="图4" title="图4" width="100%"/>
+        <img src="https://img-blog.csdnimg.cn/20200622220042462.jpg" alt="图3" title="图3" width="100%"/>
+        <p>打军体拳的你们</p>
+    </div>
+    <p>在这里，我们遇见了既爱又恨的他们。无论你有再多的抱怨，也请微笑着挥手告别，记得有一位助理说过一句话，我不希望学生工作影响我们之间的关系，但更不希望我们之间的关系影响学生工作。也许这些年里，你和助理们有些许小恩怨，但是请记住他们吧，这是一群舍弃了太多时间与梦想的人</p>
+    <div class="image-box">
+        <img src="https://img-blog.csdnimg.cn/20200622221158947.png" alt="图4" title="图4" width="100%"/>
         <p>第一届教育班四位助理</p>
     </div>
-    <p>在这里，我们遇见了伴我们走过四年大学生活的海玉主任</p>
+    <p>在这里，我们遇见了伴我们走过四年大学生活的海玉主任。从26岁的小姐姐变成了30岁的大姐姐，海玉主任用她人生中最最黄金的岁月陪我们走过了我们的青春。我不会太煽情的话语，也就说声谢谢吧，谢谢您四年里的关心和陪伴，永远爱您~</p>
     <div class="image-box">
-        <img src="https://cdn.img.wenhairu.com/images/2020/06/07/fU26G.jpg" alt="图5" title="图5" width="100%"/>
+        <img src="https://img-blog.csdnimg.cn/20200625104120567.png" alt="图5" title="图5" width="100%"/>
         <p>张海玉主任</p>
     </div>
-    <p>在这里，我们是最可爱的一批人，我们有时像孩子，有时像战士</p>
+    <p>在这里，我们是最可爱的一批人。看看那个时候你们的样子吧，已经变成老腊肉的你们，想对那个时候的你说些什么呢？盛开的花也许快要凋谢，美丽的青春也许就要结束，天下没有不散的宴席，也没有永远不下车的旅客。在挥手告别时，请为你的朋友在人生列车上留一个座位吧，也许有一天，你们还会相聚。</p>
     <div class="image-box">
-        <img src="https://cdn.img.wenhairu.com/images/2020/06/07/fU3uv.jpg" alt="图6" title="图6" width="100%"/>
-        <p>0G08第一次聚会</p>
-        <img src="https://cdn.img.wenhairu.com/images/2020/06/05/YlN9t.jpg" alt="图7" title="图7" width="100%"/>
-        <p>篮球赛</p>
+        <img id="class-img" src="" alt="图6" title="图6" width="100%"/>
+        <p>{{ student.class_num }}班的相遇</p>
     </div>
 </div>
+
+
+<div class="title-pic">
+    <div class="title-pic-text">在南理</div>
+</div>
+<div class="student-account">
+    <p style="color: #e7e7e7;font-size: 0.8em;text-align: center;text-indent: unset">以下图片部分来自南京理工大学微信公众号</p>
+    <p style="text-align: center;text-indent: unset;">亲爱的你，是否还把这些情景藏在心底</p>
+    <p style="text-align: center;text-indent: unset;">孤独回忆，这些日子有太多的相聚分离</p>
+    <p style="text-align: center;text-indent: unset;">匆匆四季，二月兰开了又谢，你来了又去</p>
+    <p style="text-align: center;text-indent: unset;">爱在南理，四年的忙忙碌碌，我不能忘记</p>
+    <div class="image-box">
+        <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9BOEZpYzM2ZWg5a3JVdUJyUE9jdmNxbEllaEFvNklxUkJmTEVublp0MlhpYWt0NmQwQVhIMHZmT05uUzJaT1lyY0pBZ1A2NnE2ZFNqVGhLQk12MHY4V1pRLzY0MA" alt="图8" title="图8" width="100%"/>
+    </div>
+
+    <p style="text-align: center;text-indent: unset;">你说，一到春天，<br/>三号路的梧桐絮让你无法呼吸</p>
+    <p style="text-align: center;text-indent: unset;">你说，一到夏天，<br/>三号路的梧桐叶组成漫天葱碧</p>
+    <p style="text-align: center;text-indent: unset;">你说，一到白天，<br/>三号路的行人们总是来去匆匆</p>
+    <p style="text-align: center;text-indent: unset;">你说，一到晚上，<br/>三号路的情侣们让你左闪右避</p>
+    <p style="text-align: center;text-indent: unset;">你笑，到了今天，<br/>三号路的一草一木全都是回忆</p>
+    <div class="image-box">
+        <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9BOEZpYzM2ZWg5a3JVdUJyUE9jdmNxbEllaEFvNklxUkJXVDVxalhEbmljZUVoU1FyUzF2UXhpY2NpYXBFeHNVYlZpY2hkWmlhSmo0cGI2cGNwN0w4OWlhbm56OEEvNjQw" alt="图8" title="图8" width="100%"/>
+    </div>
+    <p style="text-align: center;text-indent: unset;">是否，你还记得那个深深的夜晚</p>
+    <p style="text-align: center;text-indent: unset;">是否，泪水已经化作未来的期盼</p>
+    <p style="text-align: center;text-indent: unset;">是否，挂科的心悸已不再是忧患</p>
+    <p style="text-align: center;text-indent: unset;">是否，你还能听见一工门口的呐喊</p>
+    <div class="image-box">
+        <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9BOEZpYzM2ZWg5a3JVdUJyUE9jdmNxbEllaEFvNklxUkJNV0hubXlTRUdHU1VRSk1LQVozT0JKY3BaSGlhc3FjREtZZ1hSa1Y2OVVXdGEzNmFXQkZpYmtrZy82NDA" alt="图8" title="图8" width="100%"/>
+    </div>
+
+    <p style="text-align: center;text-indent: unset;">多少次的回眸，终换来四年的陪伴</p>
+    <p style="text-align: center;text-indent: unset;">多少次的吐槽，也忘不了早中晚餐</p>
+    <p style="text-align: center;text-indent: unset;">即使他们不在的日子，也要记得按时吃饭</p>
+    <p style="text-align: center;text-indent: unset;">即使你们再忙再累，也不能让肚子受难</p>
+    <div class="image-box">
+        <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9BOEZpYzM2ZWg5a3JVdUJyUE9jdmNxbEllaEFvNklxUkJmbTRlMkN3UzJtTUNpYk5RRkdpYW9qeElVTjFRekZsT1hlQzNWaWJkeGhpYUJFUjlIcEZpYzUyQ1haZy82NDA" width="100%"/>
+    </div>
+
+    <p style="text-align: center;text-indent: unset;">这次回来，没能再进四工看看</p>
+    <p style="text-align: center;text-indent: unset;">这次回来，没能在五楼眺望院办</p>
+    <p style="text-align: center;text-indent: unset;">这次回来，也没能最后一次去图书馆</p>
+    <p style="text-align: center;text-indent: unset;">这次回来，思绪都流淌在心坎</p>
+    <div class="image-box">
+        <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9BOEZpYzM2ZWg5a3JVdUJyUE9jdmNxbEllaEFvNklxUkI4REJZY0ZkdmdQekt0VmNOUEZ1MUVNUnBBS2dZSVNLTzRtSDdpYU1lT3BTQUt0dEtJRUw5c01BLzY0MA" width="100%"/>
+    </div>
+
+    <p style="text-align: center;text-indent: unset;">火红的落日，烧红了二运的篮板</p>
+    <p style="text-align: center;text-indent: unset;">微拂的清风，吹散了心中的遗憾</p>
+    <p style="text-align: center;text-indent: unset;">匆匆的岁月，散了又聚，聚了又散</p>
+    <p style="text-align: center;text-indent: unset;">短暂的青春，美好充实，却已过半</p>
+    <div class="image-box">
+        <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9BOEZpYzM2ZWg5a3JVdUJyUE9jdmNxbEllaEFvNklxUkJpYWljaWFJVkxHeGljOTBiNGZqTDdRUkFXSkk2TG5RcnE5NmppYjlMNlVOb29TOWlheEg1djllS3p3dXcvNjQw" width="100%"/>
+    </div>
+
+    <p style="text-align: center;text-indent: unset;">送大家几句歌词吧</p>
+    <p style="text-align: center;text-indent: unset;"><span>是否这次我将真的离开你</span></p>
+    <p style="text-align: center;text-indent: unset;"><span>是否这次我将不再哭</span></p>
+    <p style="text-align: center;text-indent: unset;"><span>是否这次我将一去不回头</span></p>
+    <p style="text-align: center;text-indent: unset;"><span>走向那条漫漫永无止境的路</span></p>
+    <p style="text-align: center;text-indent: unset;"><span>是否这次我已真的离开你</span></p>
+    <p style="text-align: center;text-indent: unset;"><span>是否泪水已干不再流</span></p>
+    <p style="text-align: center;text-indent: unset;"><span>是否应验了我曾说的那句话</span></p>
+    <p style="text-align: center;text-indent: unset;"><span>情到深处人孤独</span></p>
+    <div class="image-box">
+        <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2pwZy9BOEZpYzM2ZWg5a3JVdUJyUE9jdmNxbEllaEFvNklxUkJxV2ljRUhybWg5NDRmM2lhUWNiQThpYWZFUThmcE5rSGVBeUZaY1pvT3kzOXJTNmhxTWVpYllxYnRBLzY0MA" width="100%"/>
+    </div>
+</div>
+
+
 <div class="title-pic">
     <div class="title-pic-text">今天的你</div>
 </div>
 <div class="student-account">
-    <p>今天是你在南理工的第<span id="date"></span>天，疫情期间，你可能无法回到学校，在家的你，是否怀念<span>{{ student.dormitory }}</span>了呢？</p>
+    <p>今天是你在南理工的第<span id="date"></span>天，已经永远的告别<span>{{ student.dormitory }}</span>的你，是否还会想念这里？也许，室友们就是一群相爱相杀的家人，四年的同居生活，有争吵，有感恩，有宽宏大量，也有小肚鸡肠。来自天南海北的我们相聚在一起，铸就了铁打的四个人。</p>
     <div class="image-box">
-        <img src="https://iph.href.lu/200x100?text=某张宿舍照片&fg=666666&bg=cccccc" alt="图8" title="图8" width="100%"/>
+        <img src="https://img-blog.csdnimg.cn/2020062222475765.jpg" alt="图8" title="图8" width="100%"/>
         <p>宿舍</p>
     </div>
-    <p style="color: #e7e7e7;font-size: 0.8em;text-align: center;text-indent: unset">以下数据不包含科研训练、毕业设计、毕业实习、形式与政策、通识选修课以及计划外课程，不保证正确性</p>
-    <p>时间就像是电磁波，是空间弯曲带给人类的一种错觉。在这些漫长而又匆匆的日子里，<label id="score"><span>{{ student.get_credits }}</span>学分的课程组成了你大学的主旋律；<span>{{ student.total_score }}</span>的成绩总和，是你汗水与拼搏的见证；平均学分绩<span>{{ student.average_score }}</span>，在{{ student.discipline }}专业排名第<span>{{ student.rank }}</span>，无论高或低，都是四年时光的沉积。</label></p>
+    <p style="color: #e7e7e7;font-size: 0.8em;text-align: center;text-indent: unset">以下数据不包含通识选修课以及计划外课程，不保证正确性</p>
+    <p style="text-align: center;text-indent: unset;">（最最刺激和扎心的项目来了）</p>
+    <p style="text-align: center;text-indent: unset;">时间，是空间弯曲带给人类的一种错觉</p>
+    <p>在这些漫长而又匆匆的日子里，<span>{{ student.get_credits }}</span>学分的课程组成了你大学的主旋律</p>
+    <p>多少日夜积累起的汗水与疲惫，才换来了<span>{{ student.total_score }}</span>的总成绩</p>
+    <p>平均学分绩<span>{{ student.average_score }}</span>，在<span>{{ student.discipline }}</span>专业排名第<span>{{ student.rank }}</span>，无论高或低，都是四年时光的沉积。</p>
 </div>
 <div class="title-pic">
     <div class="title-pic-text">未来的你</div>
 </div>
 <div class="student-account">
     <div class="image-box">
-        <img src="https://iph.href.lu/200x100?text=不知道什么照片&fg=666666&bg=cccccc" alt="图9" title="图9" width="100%"/>
-        <p>emmmm</p>
+        <img id="class-img-2" src="https://wx2.sinaimg.cn/mw690/6fa6f4e3ly1gfzpqsn4buj23q12mqe83.jpg" alt="图9" title="图9" width="100%"/>
+        <p>未来可期</p>
     </div>
     <p>各自奔前程的身影，匆匆渐行渐远。未来在哪里平凡啊，谁给我答案。</p>
-    <p>未来的你，即将告别电光16，踏上征程。“世上有朵英雄的花，那是青春放光华”，你<span id="feature"></span>。孟子说，“生于忧患，死于安乐”，习近平总书记鼓励青年人“青春由磨砺而出彩，人生因奋斗而升华。”，未来是坎坷的，但也是铸就辉煌的。未来的你，必将绽放</p>
-    <p>在毕业季，我给大家准备了云毕业照网站，技术较为粗糙，还请多多原谅，希望大家玩的开心，记住此刻，迈向前程！</p>
+    <p>未来的你，即将告别电光16，踏上征程。《绒花》里有句歌词我很喜欢，“世上有朵英雄的花，那是青春放光华”，你<span id="feature"></span>，希望未来的你，前程似锦！</p>
+    <p>孟子说，“生于忧患，死于安乐”，习近平总书记鼓励青年人“青春由磨砺而出彩，人生因奋斗而升华。”，未来是坎坷的，但也是铸就辉煌的。未来的你，必将绽放</p>
 </div>
-
-
+<div class="title-pic">
+    <div class="title-pic-text">作者的话</div>
 </div>
-<a class="menu-a" href="{% url 'APPApi:graduationPhoto_index' %}">跳转到&gt;&gt;&gt;云·毕业照</a>
+<div class="student-account">
+    <p>最后的最后，请允许我自私的唠叨两句吧。这之后，我们也许就真的再也不见。我们一个个伪装的像是习惯了离别和相聚的列车长，但是当我们人生列车上的乘客一个个走下去，一个个再也不会上来时，泪水真的禁不住眼眶的承载，只为不忍看到你离去的身影。就让你年轻美好的样子永远的留在别人的心中吧，当我们芳华已逝，身影佝偻时，现在的这些日子，也会变成最美的回忆吧</p>
+    <p>{{ student.photo }}</p>
+</div>
 </body>
 <script>
     $(document).ready(function () {
         $("#date").text(dateDiff("{{ student.admission_time | slice:'4' }}-{{ student.admission_time | slice:'4:' }}", ))
         $("#feature").text(getFeature("{{ student.byqx }}", "{{ student.byqxdw }}"))
-        checkScore("{{ student.total_score }}")
         $(".waiting", parent.document).hide();
         $(".menu-a").click(function () {
             $(".waiting", parent.document).show();
@@ -138,7 +218,7 @@
                 feature = "决定出国，并且"+byqxdw;
                 break;
             case "二战":
-                feature = "考研失利，准备二战，但是我"+byqxdw;
+                feature = "一定会重振旗鼓再向前，准备二战，但是你"+byqxdw;
                 break;
             case "考研":
                 feature = "目标是"+byqxdw;
@@ -147,23 +227,65 @@
                 feature = "已经成功上岸，被"+byqxdw+"录取";
                 break;
             case "未就业":
-                feature = "还没有确定自己的工作单位，未来究竟在何方";
+                feature = "还没有确定自己的工作单位，未来究竟在何方。但是你一定会加倍努力，不负韶华";
                 break;
             case "已就业":
-                feature = "马上就要和读书的生涯说一句再见，准备投入到职场的浪潮中去";
+                if (byqxdw === "无") {
+                    feature = "马上就要和读书生涯说一句再见，准备投入到职场的浪潮中去";
+                }
+                else {
+                    feature = "已经找到了心仪的工作，马上就要告别亲爱的同学，去" + byqxdw + "工作啦";
+                }
                 break;
             case "延长学制":
-                feature = "是否能够让自己的青春，绽放光华";
+                feature = "一定能够让自己的青春，绽放光华。努力吧，大学的时光过得太快，人生的路上还有很长一段";
                 break;
         }
         return feature;
     }
 
-    // 修改学分，看看是否是“无”
-    function checkScore(score) {
-        if (score === "无") {
-            $("#score").html("<span>虽然你修了很多的学分，考出了不错的成绩，但是很对不起，我们暂时没有你的数据。仅仅是因为你太过优秀，去了新国大留学，只能祝愿你前程似锦，未来可期！</span>")
-        }
+    // 各班图片链接
+    var img_url = {
+        A9161040G01: 'http://dgxg.njust.edu.cn/_upload/article/images/97/56/0b67fca949aaa5aff424acb14f26/f7578996-83b6-42c2-be49-f938586283e9.jpg',
+        A9161040G02: 'http://dgxg.njust.edu.cn/_upload/article/images/7c/cd/841fc3dc4ddab38eccb386e32afa/981c6cb4-ea58-47c6-9d53-997ed320fa4e.jpg',
+        A9161040G03: 'http://dgxg.njust.edu.cn/_upload/article/images/c5/72/847e82294b57ba3fa89046e91f09/1986ab4b-2441-4a3c-830f-fc8da94ae8ea.jpg',
+        A9161040G04: 'http://dgxg.njust.edu.cn/_upload/article/images/10/6e/f6359d2f4aca82d121d2c658733e/d2042636-a68b-43fe-abb4-07463ae44ac3.jpg',
+        A9161040G05: 'http://dgxg.njust.edu.cn/_upload/article/images/77/98/0b55a75c45b5bdc7500406e5ee7b/32b2f5e3-4747-4a2c-996c-904a810dc02b.png',
+        A9161040G06: 'http://dgxg.njust.edu.cn/_upload/article/images/7f/e3/7250568c48df9a8e96bb7cae0b06/07b3f815-999d-4f61-acbb-ffceba975bbd.jpg',
+        A9161040G07: 'http://dgxg.njust.edu.cn/_upload/article/images/2c/ae/8722f8274a488be9fb4341c210b4/fd6caa66-1316-4827-8325-dd89d24739aa.jpg',
+        A9161040G08: 'http://dgxg.njust.edu.cn/_upload/article/images/92/4f/d77d191e40b982012b0b225bfbd1/8ffc7980-52b4-4fbd-9d35-f17175f04fc7.jpg',
+        A9161040G09: 'http://dgxg.njust.edu.cn/_upload/article/images/e4/de/184b820547c1bab7ee9ee08451df/62bf489c-afe6-4aab-94f8-41bdc6f42a5e.jpg',
+        A9161040G10: 'http://dgxg.njust.edu.cn/_upload/article/images/33/12/4e14848641969a3218a9a65d4906/1fba74fd-9e45-4d50-b530-e2983e57c933.jpg',
+        A9161040G11: 'http://dgxg.njust.edu.cn/_upload/article/images/ef/d4/d83d3662473dab2d72bd839dd25b/dbf9bfe2-077b-45cb-a60a-48a07eefb1fd.jpg',
+        A9161040G12: 'http://dgxg.njust.edu.cn/_upload/article/images/c0/6e/c21b8d8a4d5d8b7fa609a1d8b977/8a667daa-410b-4835-9b15-e52e668d67bc.png',
+        A9161043301: 'http://dgxg.njust.edu.cn/_upload/article/images/26/10/da85a7ea4336b291e89869877f4b/46fe7334-a685-4de7-a554-85647781bcac.jpg',
+        B9161040G01: 'https://img-blog.csdnimg.cn/2020062321231025.jpg',
+        B9161040G02: 'https://img-blog.csdnimg.cn/20200625095420448.jpg',
+        B9161040G03: 'https://img-blog.csdnimg.cn/20200622230047304.jpg',
+        B9161040G04: 'https://img-blog.csdnimg.cn/20200622230113203.jpg',
+        B9161040G05: 'https://img-blog.csdnimg.cn/20200622230143109.jpg',
+        B9161040G06: 'https://img-blog.csdnimg.cn/20200623212351687.jpg',
+        B9161040G07: 'https://img-blog.csdnimg.cn/20200622230210363.jpg',
+        B9161040G08: 'https://img-blog.csdnimg.cn/20200623215658307.JPG',
+        B9161040G09: 'https://img-blog.csdnimg.cn/20200622230237166.jpg',
+        B9161040G10: 'https://img-blog.csdnimg.cn/20200622230305615.jpg',
+        B9161040G11: 'https://img-blog.csdnimg.cn/20200623220800665.jpg',
+        B9161040G12: 'https://img-blog.csdnimg.cn/20200623212703581.JPG',
+        B9161043301: 'https://img-blog.csdnimg.cn/20200623212424207.jpg',
     }
+
+    // 根据url放置图片链接
+    if (img_url['A'+'{{ student.class_num }}'] !== undefined) {
+        $('#class-img').attr('src', img_url['A'+'{{ student.class_num }}']);
+    } else if ('{{ student.class_num }}' === '电光16教育') {
+        $('#class-img').attr('src', 'https://img-blog.csdnimg.cn/20200625114934123.jpg');
+    }
+
+    if (img_url['B'+'{{ student.class_num }}'] !== undefined) {
+        $('#class-img-2').attr('src', img_url['B'+ '{{ student.class_num }}'])
+    } else if ('{{ student.class_num }}' === '电光16教育') {
+        $('#class-img-2').attr('src', 'https://img-blog.csdnimg.cn/20200625114942300.jpg');
+    }
+
 </script>
 </html>

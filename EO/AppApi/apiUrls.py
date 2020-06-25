@@ -16,13 +16,13 @@ urlpatterns = [
     # path('520Light/', Light.stop, name='520'),
     # path('520Light/bullet', Light.bullet, name='520bullet'),
     path('graduationPhoto/', graduationPhoto.test, name='graduationPhoto_test'),
-    path('graduationPhoto/index/', graduationPhoto.index, name='graduationPhoto_index'),
+    # path('graduationPhoto/index/', graduationPhoto.index, name='graduationPhoto_index'),
     path('graduationPhoto/mybill/', graduationPhoto.mybill, name='graduationPhoto_mybill'),
     path('graduationPhoto/login/', graduationPhoto.login, name='graduationPhoto_login'),
     path('graduationPhoto/logout/', graduationPhoto.student_logout, name='graduationPhoto_logout'),
-    path('graduationPhoto/menu/', graduationPhoto.menu, name='graduationPhoto_menu'),
-    path('graduationPhoto/getbody/', graduationPhoto.getbody, name='graduationPhoto_getbody'),
-    path('graduationPhoto/get_photo/', graduationPhoto.get_photo, name='graduationPhoto_get_photo'),
+    # path('graduationPhoto/menu/', graduationPhoto.menu, name='graduationPhoto_menu'),
+    # path('graduationPhoto/getbody/', graduationPhoto.getbody, name='graduationPhoto_getbody'),
+    # path('graduationPhoto/get_photo/', graduationPhoto.get_photo, name='graduationPhoto_get_photo'),
     path('graduationPhoto/init_student/', graduationPhoto.init_student, name='graduationPhoto_init_student'),
 
 ]

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>云·毕业照</title>
+    <title>毕业账单</title>
     <link rel="stylesheet" href="{% static 'PC/css/base.css' %}">
     <link rel="shortcut icon" href="{% static 'PC/img/favicon.ico' %}" type="image/x-icon">
     <style>
@@ -43,12 +43,12 @@
     </style>
 </head>
 <body>
-<div class="body-title"><label>云·毕业照</label></div>
+<div class="body-title"><label>毕业账单</label></div>
 <div id="music">
     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="95%" height="100"
             src="//music.163.com/outchain/player?type=0&id=5048398421&auto=1&height=90"></iframe>
 </div>
-<iframe id="index" src="{% url 'APPApi:graduationPhoto_menu' %}" width="100%" allowfullscreen frameborder="0"
+<iframe id="index" src="{% url 'APPApi:graduationPhoto_mybill' %}" width="100%" allowfullscreen frameborder="0"
         onload="reinitIframe()" style="overflow: hidden"></iframe>
 <div class="waiting">
     <div class="waiting-text">正在加载</div>
