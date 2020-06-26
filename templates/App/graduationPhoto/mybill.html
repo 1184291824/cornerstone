@@ -10,7 +10,37 @@
     <link rel="stylesheet" href="{% static 'App/graduation/index.css' %}">
     <link rel="shortcut icon" href="{% static 'PC/img/favicon.ico' %}" type="image/x-icon">
     <script src=""{% static 'App/graduation/index.js' %}></script>
-    <title>云毕业照 | 我的大学账单</title>
+    <title>我的大学毕业账单</title>
+    <style>
+        #music {
+            margin: 20px auto 0 auto;
+            text-align: center;
+        }
+
+        .waiting-text {
+            position: fixed;
+            width: 8em;
+            padding: 0 2em;
+            border: solid white 2px;
+            background-color: #1f8dd6;
+            color: white;
+            bottom: 30%;
+            left: calc(50% - 6em);
+            line-height: 50px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .waiting {
+            position: fixed;
+            top: 0;
+            background-color: rgba(0,0,0,0.3);
+            z-index: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
     <style>
         .image-box{
             width: 90%;
@@ -31,6 +61,15 @@
     </style>
 </head>
 <body>
+<div class="body-title"><label>毕业账单</label></div>
+<div id="music">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="95%" height="100"
+            src="//music.163.com/outchain/player?type=0&id=5048398421&auto=1&height=90"></iframe>
+</div>
+<div class="waiting">
+    <div class="waiting-text">正在加载</div>
+</div>
+
 <div class="title-pic">
     <div class="title-pic-text">记忆中的模样</div>
 </div>
@@ -190,11 +229,8 @@
     $(document).ready(function () {
         $("#date").text(dateDiff("{{ student.admission_time | slice:'4' }}-{{ student.admission_time | slice:'4:' }}"))
         $("#feature").text(getFeature("{{ student.byqx }}", "{{ student.byqxdw }}"))
-
-        $(".menu-a").click(function () {
-            $(".waiting", parent.document).show();
-        })
         {#parent.reinitIframe();#}
+        $('.waiting').hide();
     })
     // 计算在校时间
     function dateDiff(firstDate_str){
